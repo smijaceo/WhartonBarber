@@ -1139,6 +1139,7 @@
             .apparatus-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
+                padding-top: 20px; /* Add space for badge */
             }
             
             .service-mechanism {
@@ -1159,10 +1160,23 @@
             }
             
             .signature-seal {
-                top: -12px;
-                right: 16px;
-                padding: 6px 16px;
+                top: -8px;
+                right: 12px;
+                padding: 6px 12px;
                 font-size: 9px;
+                white-space: nowrap;
+                z-index: 10;
+            }
+            
+            /* Ensure service mechanism container doesn't cut off badge */
+            .service-mechanism {
+                overflow: visible !important;
+                margin-top: 16px;
+            }
+            
+            .signature-mechanism {
+                overflow: visible !important;
+                margin-top: 16px;
             }
             
             /* Testimonials mobile */
