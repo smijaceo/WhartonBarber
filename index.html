@@ -545,8 +545,8 @@
             border: 3px solid var(--antique-brass);
         }
         
-        /* Hide mobile stats on desktop */
-        .mobile-stats {
+        /* Hide mobile elements on desktop */
+        .mobile-info {
             display: none;
         }
         
@@ -959,33 +959,36 @@
         
         /* Mobile Optimization */
         @media (max-width: 768px) {
-            /* Mobile-first clean layout */
+            /* Complete mobile redesign */
+            .hero-workshop {
+                padding: 60px 0 80px;
+            }
+            
             .hero-wrapper {
                 display: block;
                 max-width: none;
                 margin: 0;
-                padding: 40px 0 60px;
                 text-align: center;
             }
             
             .hero-content {
                 max-width: none;
-                padding: 0;
+                padding: 0 8px;
             }
             
             .hero-title {
-                font-size: clamp(2.2rem, 8vw, 3rem);
-                margin-bottom: 16px;
-                line-height: 1.2;
+                font-size: 2.5rem;
+                margin-bottom: 20px;
+                line-height: 1.1;
+                font-weight: 700;
             }
             
             .hero-tagline {
-                font-size: 17px;
-                margin-bottom: 40px;
-                line-height: 1.5;
-                max-width: 320px;
-                margin-left: auto;
-                margin-right: auto;
+                font-size: 18px;
+                margin-bottom: 50px;
+                line-height: 1.4;
+                color: var(--steam-fog);
+                opacity: 0.95;
             }
             
             /* Hide image on mobile */
@@ -994,43 +997,53 @@
             }
             
             .hero-cta {
-                justify-content: center;
                 flex-direction: column;
-                gap: 20px;
+                gap: 24px;
                 align-items: center;
+                margin-bottom: 60px;
             }
             
-            /* Add mobile stats */
-            .mobile-stats {
-                display: flex;
-                justify-content: center;
-                gap: 40px;
-                margin: 40px 0;
-                padding: 20px;
-                background: rgba(197, 179, 88, 0.1);
+            /* Mobile info cards */
+            .mobile-info {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+                margin-bottom: 40px;
+            }
+            
+            .info-card {
+                background: rgba(197, 179, 88, 0.15);
+                border: 2px solid var(--antique-brass);
                 border-radius: 12px;
-                border: 1px solid var(--antique-brass);
-            }
-            
-            .mobile-stat {
+                padding: 20px 16px;
                 text-align: center;
             }
             
-            .mobile-stat-number {
+            .info-number {
                 display: block;
                 font-family: var(--victorian);
-                font-size: 28px;
+                font-size: 32px;
                 font-weight: 700;
                 color: var(--tarnished-gold);
                 line-height: 1;
+                margin-bottom: 8px;
             }
             
-            .mobile-stat-label {
-                font-size: 12px;
+            .info-label {
+                font-size: 13px;
                 color: var(--antique-brass);
                 text-transform: uppercase;
                 letter-spacing: 1px;
-                margin-top: 4px;
+                font-family: var(--victorian);
+            }
+            
+            /* Phone number styling */
+            .phone-number {
+                color: var(--tarnished-gold) !important;
+                font-size: 20px !important;
+                font-weight: 700 !important;
+                text-decoration: none;
+                font-family: var(--victorian);
             }
             
             /* Layout improvements */
@@ -1050,16 +1063,17 @@
             
             /* Navigation mobile-friendly */
             .nav {
-                padding: 16px 0;
+                padding: 20px 0;
             }
             
             .workshop-mark {
-                font-size: 24px;
+                font-size: 20px;
+                gap: 12px;
             }
             
             .logo-gear {
-                width: 28px;
-                height: 28px;
+                width: 24px;
+                height: 24px;
             }
             
             .nav-menu {
@@ -1076,20 +1090,17 @@
             
             .cta-main {
                 width: 100%;
-                max-width: 280px;
+                max-width: 320px;
                 justify-content: center;
-                padding: 20px 32px;
-                font-size: 16px;
+                padding: 22px 40px;
+                font-size: 17px;
                 font-weight: 700;
+                border-radius: 12px;
             }
             
-            /* Show mobile stats */
-            .mobile-stats {
-                display: flex;
-            }
-            
-            .hero-workshop {
-                padding: 20px 0 40px;
+            /* Show mobile info */
+            .mobile-info {
+                display: grid;
             }
             
             /* Services section mobile */
@@ -1277,28 +1288,35 @@
             }
             
             .hero-title {
-                font-size: clamp(2rem, 9vw, 2.5rem);
-                margin-bottom: 12px;
+                font-size: 2.2rem;
+                margin-bottom: 16px;
             }
             
             .hero-tagline {
                 font-size: 16px;
+                margin-bottom: 40px;
+            }
+            
+            .mobile-info {
+                gap: 12px;
                 margin-bottom: 32px;
-                max-width: 300px;
             }
             
-            .mobile-stats {
-                gap: 32px;
-                padding: 16px;
-                margin: 32px 0;
+            .info-card {
+                padding: 16px 12px;
             }
             
-            .mobile-stat-number {
-                font-size: 24px;
+            .info-number {
+                font-size: 28px;
+                margin-bottom: 6px;
             }
             
-            .mobile-stat-label {
-                font-size: 11px;
+            .info-label {
+                font-size: 12px;
+            }
+            
+            .phone-number {
+                font-size: 18px !important;
             }
             
             .apparatus-manifest h2,
@@ -1429,27 +1447,27 @@
                     <h1 class="hero-title">Wharton Barbershop</h1>
                     
                     <p class="hero-tagline">
-                        Master barber Richard "Ricky" Wharton delivers precision cuts, 
-                        classic shaves, and expert beard work in the heart of Omaha.
+                        Professional haircuts & beard work<br>
+                        by master barber Richard "Ricky" Wharton
                     </p>
                     
-                    <!-- Mobile stats (hidden on desktop) -->
-                    <div class="mobile-stats">
-                        <div class="mobile-stat">
-                            <span class="mobile-stat-number">5.0</span>
-                            <div class="mobile-stat-label">Rating</div>
+                    <!-- Mobile info cards -->
+                    <div class="mobile-info">
+                        <div class="info-card">
+                            <span class="info-number">5.0</span>
+                            <div class="info-label">Star Rating</div>
                         </div>
-                        <div class="mobile-stat">
-                            <span class="mobile-stat-number">23+</span>
-                            <div class="mobile-stat-label">Reviews</div>
+                        <div class="info-card">
+                            <span class="info-number">23+</span>
+                            <div class="info-label">Reviews</div>
                         </div>
                     </div>
                     
                     <div class="hero-cta">
                         <a href="https://wharton-barber-shop.square.site/" class="cta-main" target="_blank">
-                            <span>Book Now</span>
+                            <span>Book Appointment</span>
                         </a>
-                        <span style="color: var(--antique-brass); font-size: 16px; font-weight: 600;">(402) 819-8821</span>
+                        <a href="tel:4028198821" class="phone-number">(402) 819-8821</a>
                     </div>
                 </div>
                 
