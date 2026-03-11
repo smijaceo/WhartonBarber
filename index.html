@@ -469,112 +469,53 @@
             overflow: hidden;
         }
         
-        .hero-content {
-            display: flex;
-            flex-direction: column;
+        .hero-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
             align-items: center;
-            text-align: center;
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
             position: relative;
             z-index: 10;
         }
         
-        .craft-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            padding: 12px 24px;
-            background: rgba(197, 179, 88, 0.2);
-            border: 1px solid var(--antique-brass);
-            border-radius: 30px;
-            color: var(--tarnished-gold);
-            font-family: var(--victorian);
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 32px;
-            backdrop-filter: blur(10px);
+        .hero-content {
+            max-width: 500px;
         }
         
         .hero-title {
             font-family: var(--victorian);
-            font-size: clamp(3.5rem, 8vw, 6rem);
+            font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 700;
             line-height: 1.1;
-            margin-bottom: 24px;
-            background: linear-gradient(135deg, var(--tarnished-gold) 0%, var(--antique-brass) 50%, var(--burnished-bronze) 100%);
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--tarnished-gold) 0%, var(--antique-brass) 100%);
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
         
-        .hero-subtitle {
-            font-size: 24px;
-            line-height: 1.4;
-            margin-bottom: 16px;
-            color: var(--tarnished-gold);
-            font-family: var(--victorian);
-            font-weight: 400;
-        }
-        
-        .hero-description {
-            font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 48px;
+        .hero-tagline {
+            font-size: 20px;
+            line-height: 1.5;
+            margin-bottom: 32px;
             color: var(--steam-fog);
             opacity: 0.9;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .hero-stats {
-            display: flex;
-            gap: 60px;
-            margin-bottom: 48px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .stat-item {
-            text-align: center;
-        }
-        
-        .stat-number {
-            display: block;
-            font-family: var(--victorian);
-            font-size: 48px;
-            font-weight: 700;
-            color: var(--tarnished-gold);
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-            line-height: 1;
-        }
-        
-        .stat-label {
-            font-family: var(--victorian);
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--antique-brass);
-            margin-top: 8px;
         }
         
         .hero-cta {
             display: flex;
-            gap: 24px;
-            justify-content: center;
-            flex-wrap: wrap;
+            gap: 16px;
+            align-items: center;
         }
         
-        .cta-primary {
+        .cta-main {
             display: inline-flex;
             align-items: center;
             gap: 12px;
-            padding: 20px 40px;
-            background: linear-gradient(135deg, var(--antique-brass) 0%, var(--tarnished-gold) 50%, var(--burnished-bronze) 100%);
+            padding: 18px 36px;
+            background: linear-gradient(135deg, var(--antique-brass) 0%, var(--tarnished-gold) 100%);
             color: var(--iron-black);
             text-decoration: none;
             font-family: var(--victorian);
@@ -582,56 +523,61 @@
             font-size: 16px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            border-radius: 8px;
-            border: 2px solid var(--weathered-copper);
-            box-shadow: var(--deep-shadow);
+            border-radius: 6px;
             transition: var(--transition-smooth);
-            position: relative;
-            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(218, 165, 32, 0.3);
         }
         
-        .cta-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
+        .cta-main:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(218, 165, 32, 0.4);
+        }
+        
+        .hero-visual {
+            position: relative;
+            height: 500px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(15, 15, 15, 0.8) 0%, rgba(26, 26, 26, 0.6) 100%);
+            border: 3px solid var(--antique-brass);
+        }
+        
+        .hero-image {
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            transition: left 0.6s ease;
+            object-fit: cover;
+            filter: sepia(15%) contrast(1.1) brightness(0.9);
         }
         
-        .cta-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 0 30px rgba(218, 165, 32, 0.5);
-        }
-        
-        .cta-primary:hover::before {
-            left: 100%;
-        }
-        
-        .cta-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            padding: 20px 40px;
-            background: transparent;
-            color: var(--tarnished-gold);
-            text-decoration: none;
-            font-family: var(--victorian);
-            font-weight: 600;
-            font-size: 16px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-radius: 8px;
+        .hero-overlay {
+            position: absolute;
+            bottom: 24px;
+            left: 24px;
+            right: 24px;
+            background: linear-gradient(135deg, rgba(15, 15, 15, 0.95) 0%, rgba(26, 26, 26, 0.9) 100%);
+            backdrop-filter: blur(10px);
             border: 2px solid var(--antique-brass);
-            transition: var(--transition-smooth);
+            border-radius: 8px;
+            padding: 20px;
         }
         
-        .cta-secondary:hover {
-            background: rgba(197, 179, 88, 0.1);
-            border-color: var(--tarnished-gold);
-            transform: translateY(-2px);
+        .review-stars {
+            color: var(--tarnished-gold);
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        
+        .review-text {
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+        
+        .review-author {
+            color: var(--tarnished-gold);
+            font-size: 13px;
+            font-weight: 600;
         }
         
 
@@ -1005,21 +951,32 @@
         
         /* Mobile Optimization */
         @media (max-width: 768px) {
-            /* Typography adjustments */
+            /* Hero mobile layout */
+            .hero-wrapper {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+            
             .hero-title {
                 font-size: clamp(2.5rem, 8vw, 3.5rem);
-                line-height: 1.2;
-                margin-bottom: 20px;
+                margin-bottom: 16px;
             }
             
-            .hero-subtitle {
-                font-size: 20px;
-                margin-bottom: 12px;
+            .hero-tagline {
+                font-size: 18px;
+                margin-bottom: 24px;
             }
             
-            .hero-description {
-                font-size: 16px;
-                margin-bottom: 32px;
+            .hero-visual {
+                height: 400px;
+                order: -1;
+            }
+            
+            .hero-cta {
+                justify-content: center;
+                flex-direction: column;
+                gap: 12px;
             }
             
             /* Layout improvements */
@@ -1063,36 +1020,12 @@
                 display: block;
             }
             
-            /* Hero stats mobile layout */
-            .hero-stats {
-                gap: 40px;
-                margin-bottom: 32px;
-                flex-direction: row;
-                justify-content: space-around;
-            }
-            
-            .stat-number {
-                font-size: 36px;
-            }
-            
-            .stat-label {
-                font-size: 11px;
-            }
-            
-            /* Hero CTA mobile layout */
-            .hero-cta {
-                flex-direction: column;
-                gap: 16px;
-                align-items: center;
-            }
-            
-            .cta-primary,
-            .cta-secondary {
+            .cta-main {
                 width: 100%;
                 max-width: 280px;
                 justify-content: center;
-                padding: 18px 32px;
-                font-size: 14px;
+                padding: 16px 32px;
+                font-size: 15px;
             }
             
             /* Services section mobile */
@@ -1274,25 +1207,12 @@
                 font-size: clamp(2rem, 10vw, 2.8rem);
             }
             
-            .hero-subtitle {
-                font-size: 18px;
+            .hero-tagline {
+                font-size: 16px;
             }
             
-            .hero-description {
-                font-size: 15px;
-            }
-            
-            .hero-stats {
-                gap: 24px;
-                margin-bottom: 24px;
-            }
-            
-            .stat-number {
-                font-size: 32px;
-            }
-            
-            .stat-label {
-                font-size: 10px;
+            .hero-visual {
+                height: 350px;
             }
             
             .apparatus-manifest h2,
@@ -1309,10 +1229,9 @@
                 font-size: 20px;
             }
             
-            .cta-primary,
-            .cta-secondary {
+            .cta-main {
                 padding: 16px 28px;
-                font-size: 13px;
+                font-size: 14px;
             }
             
             .detail-mechanism {
@@ -1419,44 +1338,31 @@
         </div>
         
         <div class="container">
-            <div class="hero-content reveal">
-                <div class="craft-badge">
-                    <div class="gear-element" style="width: 20px; height: 20px;"></div>
-                    <span>Precision Barbering • Master Craftsman</span>
-                </div>
-                
-                <h1 class="hero-title">Wharton Barbershop</h1>
-                
-                <div class="hero-subtitle">Master Richard "Ricky" Wharton</div>
-                
-                <p class="hero-description">
-                    Professional men's grooming with old-school precision and attention to detail. 
-                    Expert cuts, classic shaves, and beard work with the meticulous care of a true craftsman.
-                </p>
-                
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">5.0</span>
-                        <div class="stat-label">Star Rating</div>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">23+</span>
-                        <div class="stat-label">Reviews</div>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">5+</span>
-                        <div class="stat-label">Years Experience</div>
+            <div class="hero-wrapper reveal">
+                <div class="hero-content">
+                    <h1 class="hero-title">Wharton Barbershop</h1>
+                    
+                    <p class="hero-tagline">
+                        Master barber Richard "Ricky" Wharton delivers precision cuts, 
+                        classic shaves, and expert beard work in the heart of Omaha.
+                    </p>
+                    
+                    <div class="hero-cta">
+                        <a href="https://wharton-barber-shop.square.site/" class="cta-main" target="_blank">
+                            <span>Book Now</span>
+                        </a>
+                        <span style="color: var(--antique-brass); font-size: 14px;">(402) 819-8821</span>
                     </div>
                 </div>
                 
-                <div class="hero-cta">
-                    <a href="https://wharton-barber-shop.square.site/" class="cta-primary" target="_blank">
-                        <span>Book Appointment</span>
-                        <div class="gear-element" style="width: 20px; height: 20px;"></div>
-                    </a>
-                    <a href="#services" class="cta-secondary">
-                        <span>View Services</span>
-                    </a>
+                <div class="hero-visual">
+                    <img src="https://placehold.co/600x500/1A1A1A/DAA520?text=Master+Richard+at+Work" alt="Master Richard Wharton at Wharton Barbershop" class="hero-image">
+                    
+                    <div class="hero-overlay">
+                        <div class="review-stars">★★★★★ 5.0 Rating</div>
+                        <div class="review-text">"Very meticulous with his craft and a great vibe in his shop. Can tell he takes pride in his work."</div>
+                        <div class="review-author">— Tyrell, Recent Client</div>
+                    </div>
                 </div>
             </div>
         </div>
