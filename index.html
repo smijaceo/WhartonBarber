@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wharton Barbershop | Master Barber Richard Wharton | Omaha, NE</title>
+    <title>Wharton Barbershop | Richard Wharton | Omaha's Most Distinctive Experience</title>
     
-    <meta name="description" content="Wharton Barbershop - Where master barber Richard Wharton delivers precision cuts with Victorian craftsmanship. Single chair experience in Omaha, NE.">
+    <meta name="description" content="Wharton Barbershop - Where Richard Wharton crafts distinctive experiences, not just haircuts. Single chair mastery in Omaha, NE.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -20,136 +20,167 @@
         }
         
         :root {
-            /* Steampunk-Inspired Palette */
-            --brass: #D4AF37;
-            --copper: #B87333;
-            --bronze: #8B4513;
-            --warm-cream: #F5F2E8;
-            --rich-brown: #3D2A1E;
-            --dark-brown: #2C1810;
-            --steam-white: #FEFCF8;
+            /* Distinctive Color System */
+            --deep-forest: #1B4332;
+            --rich-emerald: #2D5A3D;
+            --warm-gold: #F7B32B;
+            --soft-sage: #8FBC8F;
+            --cream: #FDF7E7;
+            --charcoal: #2C2C2C;
+            --warm-white: #FFFEF7;
+            --accent-copper: #CB7733;
             
             /* Typography */
-            --ornate: 'Cinzel', serif;
-            --readable: 'Crimson Text', serif;
+            --display: 'Playfair Display', serif;
+            --modern: 'Space Grotesk', sans-serif;
             
             /* Effects */
-            --warm-shadow: 0 4px 20px rgba(139, 69, 19, 0.2);
-            --brass-glow: 0 0 20px rgba(212, 175, 55, 0.3);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-warm: 0 8px 32px rgba(27, 67, 50, 0.15);
+            --shadow-gold: 0 4px 20px rgba(247, 179, 43, 0.2);
+            --transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
         
-        @keyframes gear-turn {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
         }
         
-        @keyframes brass-shimmer {
-            0%, 100% { opacity: 0.8; }
-            50% { opacity: 1; }
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
         }
         
         body {
-            font-family: var(--readable);
+            font-family: var(--modern);
             line-height: 1.6;
-            color: var(--rich-brown);
-            background: var(--steam-white);
+            color: var(--charcoal);
+            background: var(--warm-white);
             overflow-x: hidden;
         }
         
+        /* Unique Layout System */
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 24px;
         }
         
-        /* Steampunk Accent Elements */
-        .brass-accent {
-            color: var(--brass);
+        .split-container {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 0;
+            min-height: 100vh;
         }
         
-        .gear-icon {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 2px solid var(--brass);
-            border-radius: 50%;
+        .content-panel {
+            padding: 80px 60px;
+            background: var(--warm-white);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .visual-panel {
+            background: linear-gradient(135deg, var(--deep-forest) 0%, var(--rich-emerald) 100%);
             position: relative;
-            margin: 0 8px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
-        .gear-icon::before {
-            content: '⚙';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 12px;
-            color: var(--brass);
-            animation: gear-turn 10s linear infinite;
-        }
-        
-        .brass-border {
-            border: 2px solid var(--brass);
-            border-radius: 8px;
-            position: relative;
-        }
-        
-        .brass-border::before,
-        .brass-border::after {
+        .visual-panel::before {
             content: '';
             position: absolute;
-            width: 8px;
-            height: 8px;
-            background: var(--brass);
-            border-radius: 50%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><circle cx="100" cy="100" r="80" fill="none" stroke="%23F7B32B" stroke-width="1" opacity="0.1"/><circle cx="40" cy="40" r="20" fill="none" stroke="%238FBC8F" stroke-width="0.5" opacity="0.15"/><circle cx="160" cy="160" r="30" fill="none" stroke="%23F7B32B" stroke-width="0.5" opacity="0.1"/></svg>');
+            opacity: 0.3;
         }
         
-        .brass-border::before {
-            top: -4px;
-            left: -4px;
+        /* Typography System */
+        .display-xl {
+            font-family: var(--display);
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 600;
+            line-height: 1.1;
+            color: var(--deep-forest);
         }
         
-        .brass-border::after {
-            bottom: -4px;
-            right: -4px;
+        .display-lg {
+            font-family: var(--display);
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--deep-forest);
         }
         
-        .btn {
+        .accent-text {
+            color: var(--warm-gold);
+            font-weight: 600;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            font-weight: 300;
+            color: var(--rich-emerald);
+            margin: 16px 0 32px;
+            letter-spacing: 0.5px;
+        }
+        
+        .body-large {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 24px;
+            font-weight: 300;
+        }
+        
+        /* Unique Button System */
+        .btn-primary {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 16px 32px;
-            background: linear-gradient(135deg, var(--brass) 0%, var(--copper) 100%);
-            color: var(--dark-brown);
+            gap: 12px;
+            padding: 20px 40px;
+            background: linear-gradient(135deg, var(--warm-gold) 0%, var(--accent-copper) 100%);
+            background-size: 200% 100%;
+            color: var(--charcoal);
             text-decoration: none;
-            font-family: var(--ornate);
+            font-family: var(--modern);
             font-weight: 600;
-            border-radius: 6px;
-            box-shadow: var(--warm-shadow);
+            font-size: 16px;
+            border-radius: 50px;
+            box-shadow: var(--shadow-gold);
             transition: var(--transition);
             position: relative;
             overflow: hidden;
         }
         
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.6s ease;
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(247, 179, 43, 0.4);
+            animation: shimmer 2s infinite;
         }
         
-        .btn:hover {
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border: 2px solid var(--warm-gold);
+            color: var(--warm-gold);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 25px;
+            transition: var(--transition);
+            background: transparent;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--warm-gold);
+            color: var(--charcoal);
             transform: translateY(-2px);
-            box-shadow: var(--brass-glow);
-        }
-        
-        .btn:hover::before {
-            left: 100%;
         }
         
         /* Header */
@@ -157,40 +188,38 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(254, 252, 248, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 254, 247, 0.95);
+            backdrop-filter: blur(20px);
             z-index: 1000;
-            border-bottom: 1px solid var(--brass);
+            border-bottom: 1px solid rgba(27, 67, 50, 0.1);
         }
         
         .nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 20px 60px;
         }
         
         .logo {
-            font-family: var(--ornate);
-            font-size: 24px;
+            font-family: var(--display);
+            font-size: 28px;
             font-weight: 600;
-            color: var(--dark-brown);
+            color: var(--deep-forest);
             text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
         
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 32px;
+            gap: 40px;
         }
         
         .nav-links a {
-            color: var(--rich-brown);
+            color: var(--charcoal);
             text-decoration: none;
             font-weight: 500;
+            font-size: 15px;
             transition: var(--transition);
             position: relative;
         }
@@ -202,349 +231,274 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--brass);
+            background: var(--warm-gold);
             transition: width 0.3s ease;
         }
         
         .nav-links a:hover {
-            color: var(--brass);
+            color: var(--warm-gold);
         }
         
         .nav-links a:hover::after {
             width: 100%;
         }
         
-        /* Hero */
+        /* Hero Section */
         .hero {
-            padding: 140px 0 80px;
-            background: linear-gradient(135deg, var(--warm-cream) 0%, var(--steam-white) 100%);
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+        
+        .hero-visual {
             position: relative;
         }
         
-        .hero::before {
-            content: '';
+        .hero-image {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            filter: contrast(1.1) brightness(0.9);
+        }
+        
+        .hero-overlay {
             position: absolute;
-            top: 0;
-            right: 0;
-            width: 30%;
-            height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="30" fill="none" stroke="%23D4AF37" stroke-width="0.5" opacity="0.1"/></svg>');
-            opacity: 0.5;
-        }
-        
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 80px;
-            align-items: center;
-            position: relative;
-            z-index: 10;
-        }
-        
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
-            background: rgba(212, 175, 55, 0.1);
-            border: 1px solid var(--brass);
+            bottom: 60px;
+            left: 60px;
+            background: rgba(255, 254, 247, 0.95);
+            padding: 40px;
             border-radius: 20px;
-            color: var(--brass);
-            font-family: var(--ornate);
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 24px;
+            max-width: 400px;
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--warm-gold);
+            animation: float 6s ease-in-out infinite;
         }
         
-        .hero-title {
-            font-family: var(--ornate);
-            font-size: clamp(2.5rem, 5vw, 3.8rem);
-            font-weight: 600;
-            line-height: 1.2;
-            margin-bottom: 24px;
-            color: var(--dark-brown);
-        }
-        
-        .hero-subtitle {
+        .rating-stars {
+            color: var(--warm-gold);
             font-size: 20px;
-            color: var(--brass);
-            font-style: italic;
-            margin-bottom: 20px;
+            margin-bottom: 12px;
         }
         
-        .hero-description {
-            font-size: 18px;
-            line-height: 1.7;
-            margin-bottom: 32px;
-            opacity: 0.9;
-            max-width: 500px;
+        .hero-overlay h3 {
+            font-family: var(--display);
+            color: var(--deep-forest);
+            margin-bottom: 12px;
+            font-size: 20px;
         }
         
-        .hero-stats {
-            display: flex;
+        .hero-overlay p {
+            font-size: 15px;
+            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+        
+        .client-name {
+            color: var(--warm-gold);
+            font-weight: 600;
+        }
+        
+        /* Stats Panel */
+        .stats-panel {
+            background: var(--deep-forest);
+            color: var(--cream);
+            padding: 60px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             gap: 40px;
-            margin: 40px 0;
+            margin-bottom: 40px;
         }
         
-        .stat {
+        .stat-item {
             text-align: center;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.7);
-            border-radius: 8px;
-            border: 1px solid var(--brass);
-            min-width: 100px;
+            padding: 30px 20px;
+            background: rgba(247, 179, 43, 0.1);
+            border-radius: 16px;
+            border: 1px solid var(--warm-gold);
         }
         
         .stat-number {
             display: block;
-            font-family: var(--ornate);
-            font-size: 28px;
+            font-family: var(--display);
+            font-size: 36px;
             font-weight: 600;
-            color: var(--brass);
-        }
-        
-        .stat-label {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            opacity: 0.8;
-            margin-top: 4px;
-        }
-        
-        .hero-image {
-            position: relative;
-            padding: 20px;
-        }
-        
-        .hero-image img {
-            width: 100%;
-            height: 450px;
-            object-fit: cover;
-            border-radius: 8px;
-            filter: sepia(10%) contrast(1.05);
-        }
-        
-        .testimonial-float {
-            position: absolute;
-            bottom: -20px;
-            left: -20px;
-            background: var(--steam-white);
-            padding: 20px;
-            border-radius: 8px;
-            border: 2px solid var(--brass);
-            max-width: 260px;
-            box-shadow: var(--warm-shadow);
-        }
-        
-        .testimonial-stars {
-            color: var(--brass);
-            font-size: 16px;
+            color: var(--warm-gold);
             margin-bottom: 8px;
         }
         
-        .testimonial-float p {
+        .stat-label {
             font-size: 14px;
-            margin: 6px 0;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
         }
         
-        .testimonial-author {
-            color: var(--brass);
-            font-weight: 600;
+        /* Story Section */
+        .story {
+            background: var(--cream);
         }
         
-        /* About */
-        .about {
-            padding: 100px 0;
-            background: var(--rich-brown);
-            color: var(--steam-white);
-        }
-        
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-        
-        .about-text h2 {
-            font-family: var(--ornate);
-            font-size: 36px;
-            font-weight: 600;
-            color: var(--brass);
+        .story-content h2 {
             margin-bottom: 32px;
         }
         
-        .about-text p {
-            margin-bottom: 24px;
-            font-size: 16px;
-            line-height: 1.7;
-            opacity: 0.9;
+        .story-highlight {
+            background: var(--warm-gold);
+            color: var(--charcoal);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
         }
         
-        .craftsmanship-points {
+        .craftsmanship-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            margin-top: 32px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 40px;
         }
         
-        .craft-point {
+        .craft-item {
             display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 12px;
-            background: rgba(212, 175, 55, 0.1);
-            border: 1px solid var(--brass);
-            border-radius: 6px;
+            gap: 16px;
+            padding: 20px;
+            background: var(--warm-white);
+            border-radius: 12px;
+            border-left: 4px solid var(--warm-gold);
+            transition: var(--transition);
+        }
+        
+        .craft-item:hover {
+            transform: translateX(8px);
+            box-shadow: var(--shadow-warm);
         }
         
         .craft-icon {
-            width: 6px;
-            height: 6px;
-            background: var(--brass);
+            width: 12px;
+            height: 12px;
+            background: var(--warm-gold);
             border-radius: 50%;
+            flex-shrink: 0;
         }
         
         .craft-text {
-            font-size: 14px;
             font-weight: 500;
-        }
-        
-        .about-image img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 8px;
-            border: 2px solid var(--brass);
-            filter: sepia(20%) contrast(1.1);
         }
         
         /* Services */
         .services {
-            padding: 100px 0;
-            background: var(--warm-cream);
+            background: var(--warm-white);
         }
         
-        .services-header {
+        .services-intro {
             text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .services-header h2 {
-            font-family: var(--ornate);
-            font-size: 36px;
-            font-weight: 600;
-            color: var(--dark-brown);
-            margin-bottom: 16px;
-        }
-        
-        .services-header p {
-            font-size: 18px;
-            opacity: 0.8;
-            max-width: 600px;
-            margin: 0 auto;
+            max-width: 800px;
+            margin: 0 auto 60px;
         }
         
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 24px;
+            gap: 30px;
+            margin-top: 40px;
         }
         
         .service-card {
-            background: var(--steam-white);
-            padding: 32px;
-            border-radius: 8px;
-            border: 1px solid var(--brass);
+            background: var(--cream);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(27, 67, 50, 0.1);
             transition: var(--transition);
             position: relative;
+            overflow: hidden;
         }
         
         .service-card::before {
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
-            width: 4px;
+            left: -100%;
+            width: 100%;
             height: 100%;
-            background: var(--brass);
-            border-radius: 8px 0 0 8px;
-            transform: scaleY(0);
-            transition: transform 0.3s ease;
+            background: linear-gradient(90deg, transparent, rgba(247, 179, 43, 0.1), transparent);
+            transition: left 0.6s ease;
         }
         
         .service-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--warm-shadow);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-warm);
+            border-color: var(--warm-gold);
         }
         
         .service-card:hover::before {
-            transform: scaleY(1);
+            left: 100%;
         }
         
         .service-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
         
         .service-name {
-            font-family: var(--ornate);
-            font-size: 20px;
+            font-family: var(--display);
+            font-size: 22px;
             font-weight: 600;
-            color: var(--dark-brown);
+            color: var(--deep-forest);
         }
         
         .service-price {
-            font-family: var(--ornate);
-            font-size: 24px;
+            font-family: var(--display);
+            font-size: 28px;
             font-weight: 600;
-            color: var(--brass);
+            color: var(--warm-gold);
         }
         
         .service-duration {
-            color: var(--copper);
+            color: var(--rich-emerald);
             font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 12px;
+            font-weight: 500;
+            margin-bottom: 16px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
         
         .service-description {
-            font-size: 15px;
+            font-size: 16px;
             line-height: 1.6;
+            color: var(--charcoal);
             opacity: 0.8;
         }
         
         .featured-service {
-            background: var(--dark-brown);
-            color: var(--steam-white);
-            transform: scale(1.02);
+            background: var(--deep-forest);
+            color: var(--cream);
+            transform: scale(1.03);
             position: relative;
         }
         
         .featured-service .service-name {
-            color: var(--steam-white);
+            color: var(--cream);
         }
         
         .featured-service .service-description {
+            color: var(--cream);
             opacity: 0.9;
         }
         
         .featured-badge {
             position: absolute;
-            top: -12px;
-            right: 20px;
-            background: var(--brass);
-            color: var(--dark-brown);
-            padding: 6px 16px;
-            border-radius: 12px;
-            font-family: var(--ornate);
-            font-size: 10px;
+            top: -15px;
+            right: 30px;
+            background: var(--warm-gold);
+            color: var(--charcoal);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 12px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -552,164 +506,181 @@
         
         /* Reviews */
         .reviews {
-            padding: 100px 0;
-            background: var(--steam-white);
+            background: var(--rich-emerald);
+            color: var(--cream);
         }
         
-        .reviews-header {
+        .reviews h2 {
+            color: var(--cream);
             text-align: center;
             margin-bottom: 60px;
-        }
-        
-        .reviews-header h2 {
-            font-family: var(--ornate);
-            font-size: 36px;
-            font-weight: 600;
-            color: var(--dark-brown);
-            margin-bottom: 16px;
         }
         
         .reviews-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
+            gap: 30px;
         }
         
         .review-card {
-            background: var(--warm-cream);
-            padding: 24px;
-            border-radius: 8px;
-            border: 1px solid var(--brass);
+            background: rgba(255, 254, 247, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(247, 179, 43, 0.3);
             transition: var(--transition);
-            position: relative;
-        }
-        
-        .review-card::before {
-            content: '"';
-            position: absolute;
-            top: -8px;
-            left: 16px;
-            font-family: var(--ornate);
-            font-size: 48px;
-            color: var(--brass);
-            opacity: 0.3;
         }
         
         .review-card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--warm-shadow);
+            transform: translateY(-4px);
+            background: rgba(255, 254, 247, 0.15);
         }
         
         .review-stars {
-            color: var(--brass);
-            margin-bottom: 12px;
+            color: var(--warm-gold);
+            font-size: 18px;
+            margin-bottom: 16px;
         }
         
         .review-text {
-            font-style: italic;
-            margin-bottom: 16px;
+            font-size: 16px;
             line-height: 1.6;
-            padding-left: 16px;
+            font-style: italic;
+            margin-bottom: 20px;
+            opacity: 0.9;
         }
         
         .review-author {
+            color: var(--warm-gold);
             font-weight: 600;
-            color: var(--brass);
-            padding-left: 16px;
         }
         
         /* Contact */
         .contact {
-            padding: 100px 0;
-            background: var(--dark-brown);
-            color: var(--steam-white);
+            background: var(--deep-forest);
+            color: var(--cream);
         }
         
-        .contact-content {
+        .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 80px;
+            align-items: start;
         }
         
         .contact-info h2 {
-            font-family: var(--ornate);
-            font-size: 36px;
-            font-weight: 600;
-            color: var(--brass);
-            margin-bottom: 32px;
+            color: var(--warm-gold);
+            margin-bottom: 40px;
         }
         
         .contact-details {
-            margin-bottom: 32px;
+            margin-bottom: 40px;
         }
         
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 16px;
-            margin-bottom: 16px;
-            padding: 12px;
-            background: rgba(212, 175, 55, 0.1);
-            border-radius: 6px;
-            border: 1px solid var(--brass);
+            gap: 20px;
+            margin-bottom: 24px;
+            padding: 20px;
+            background: rgba(247, 179, 43, 0.1);
+            border-radius: 12px;
+            border: 1px solid rgba(247, 179, 43, 0.3);
+            transition: var(--transition);
+        }
+        
+        .contact-item:hover {
+            background: rgba(247, 179, 43, 0.15);
+            transform: translateX(8px);
         }
         
         .contact-icon {
-            color: var(--brass);
-            font-size: 18px;
+            font-size: 20px;
+            color: var(--warm-gold);
         }
         
         .contact-item strong {
-            color: var(--brass);
-            font-family: var(--ornate);
+            color: var(--warm-gold);
             display: block;
             margin-bottom: 4px;
         }
         
         .hours-display {
-            background: var(--rich-brown);
-            padding: 24px;
-            border-radius: 8px;
-            border: 2px solid var(--brass);
+            background: rgba(255, 254, 247, 0.05);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid var(--warm-gold);
         }
         
         .hours-display h3 {
-            color: var(--brass);
-            margin-bottom: 16px;
-            font-family: var(--ornate);
+            color: var(--warm-gold);
+            margin-bottom: 24px;
+            font-family: var(--display);
+            font-size: 24px;
         }
         
         .hours-item {
             display: flex;
             justify-content: space-between;
-            padding: 8px 0;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(247, 179, 43, 0.2);
+            font-weight: 300;
         }
         
         .hours-item:last-child {
             border-bottom: none;
         }
         
+        .day {
+            font-weight: 500;
+        }
+        
+        .time {
+            color: var(--warm-gold);
+        }
+        
         /* Footer */
         .footer {
-            background: var(--dark-brown);
+            background: var(--charcoal);
             padding: 40px 0;
-            border-top: 1px solid var(--brass);
             text-align: center;
-            color: var(--steam-white);
+            color: var(--cream);
+            opacity: 0.8;
         }
         
         /* Responsive */
-        @media (max-width: 768px) {
-            .hero-content,
-            .about-content,
-            .contact-content {
+        @media (max-width: 1024px) {
+            .split-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .visual-panel {
+                min-height: 60vh;
+            }
+            
+            .hero-overlay {
+                position: static;
+                margin-top: 40px;
+                max-width: none;
+            }
+            
+            .contact-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
+        }
+        
+        @media (max-width: 768px) {
+            .nav {
+                padding: 20px 24px;
+            }
             
-            .hero-stats {
-                justify-content: center;
+            .content-panel {
+                padding: 60px 24px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
                 gap: 20px;
             }
             
@@ -717,13 +688,8 @@
                 grid-template-columns: 1fr;
             }
             
-            .craftsmanship-points {
+            .craftsmanship-grid {
                 grid-template-columns: 1fr;
-            }
-            
-            .testimonial-float {
-                position: static;
-                margin-top: 20px;
             }
             
             .nav-links {
@@ -732,13 +698,13 @@
         }
         
         /* Reveal Animation */
-        .fade-in {
+        .reveal {
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
         
-        .fade-in.visible {
+        .reveal.visible {
             opacity: 1;
             transform: translateY(0);
         }
@@ -749,15 +715,12 @@
     <header class="header">
         <div class="container">
             <nav class="nav">
-                <a href="#" class="logo">
-                    <span class="gear-icon"></span>
-                    <span>Wharton Barbershop</span>
-                </a>
+                <a href="#" class="logo">Wharton</a>
                 <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
+                    <li><a href="#story">Story</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#reviews">Reviews</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact">Visit</a></li>
                 </ul>
             </nav>
         </div>
@@ -765,103 +728,96 @@
 
     <!-- Hero -->
     <section class="hero">
-        <div class="container">
-            <div class="hero-content fade-in">
-                <div class="hero-text">
-                    <div class="hero-badge">
-                        <span class="gear-icon"></span>
-                        <span>Master Craftsman • Single Chair</span>
-                    </div>
-                    
-                    <h1 class="hero-title">Precision. Passion. Personal.</h1>
-                    
-                    <p class="hero-subtitle">Where Victorian craftsmanship meets modern barbering</p>
-                    
-                    <p class="hero-description">
-                        Master barber Richard "Ricky" Wharton delivers meticulous cuts, expert fades, 
-                        and traditional straight razor shaves in his single-chair shop. 
-                        Every detail matters, every client gets undivided attention.
+        <div class="split-container">
+            <div class="content-panel">
+                <div class="reveal">
+                    <h1 class="display-xl">Craft. Not just cuts.</h1>
+                    <p class="subtitle">Where Richard Wharton turns barbering into an art form</p>
+                    <p class="body-large">
+                        Step into Omaha's most distinctive barbershop experience. 
+                        <span class="accent-text">Single chair. Undivided attention.</span> 
+                        Every detail crafted with precision and care.
                     </p>
                     
-                    <div class="hero-stats">
-                        <div class="stat">
-                            <span class="stat-number">5.0</span>
-                            <div class="stat-label">Perfect Rating</div>
+                    <div class="stats-panel">
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-number">5.0</span>
+                                <div class="stat-label">Perfect Rating</div>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">23</span>
+                                <div class="stat-label">Five-Star Reviews</div>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">1</span>
+                                <div class="stat-label">Chair Experience</div>
+                            </div>
                         </div>
-                        <div class="stat">
-                            <span class="stat-number">23</span>
-                            <div class="stat-label">Five-Star Reviews</div>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">1</span>
-                            <div class="stat-label">Chair Experience</div>
-                        </div>
+                        
+                        <a href="https://wharton-barber-shop.square.site/" class="btn-primary" target="_blank">
+                            <span>Reserve Your Experience</span>
+                            <span>→</span>
+                        </a>
                     </div>
-                    
-                    <a href="https://wharton-barber-shop.square.site/" class="btn" target="_blank">
-                        <span>Book Your Appointment</span>
-                        <span class="gear-icon"></span>
-                    </a>
                 </div>
+            </div>
+            
+            <div class="visual-panel">
+                <img src="https://placehold.co/800x1000/1B4332/F7B32B?text=Master+at+Work" alt="Richard Wharton master barber" class="hero-image">
                 
-                <div class="hero-image brass-border">
-                    <img src="https://placehold.co/500x450/8B4513/D4AF37?text=Master+Barber+at+Work" alt="Master barber Richard Ricky Wharton at work">
-                    
-                    <div class="testimonial-float">
-                        <div class="testimonial-stars">★★★★★</div>
-                        <p><strong>23 Perfect Reviews</strong></p>
-                        <p>"Very meticulous with his craft and a great vibe in his shop. Can tell he takes pride in his work."</p>
-                        <p class="testimonial-author">— Tyrell M.</p>
-                    </div>
+                <div class="hero-overlay">
+                    <div class="rating-stars">★★★★★</div>
+                    <h3>Perfect Craftsmanship</h3>
+                    <p>"Very meticulous with his craft and a great vibe in his shop. Can tell he takes pride in his work."</p>
+                    <p class="client-name">— Tyrell M.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-content fade-in">
-                <div class="about-text">
-                    <h2>The Craftsman's Story</h2>
-                    <p>
-                        Richard "Ricky" Wharton didn't just open another barbershop. 
-                        After years perfecting his craft at Dennison Dahlman, he created something special: 
-                        a single-chair experience where quality trumps quantity.
+    <!-- Story -->
+    <section id="story">
+        <div class="split-container">
+            <div class="visual-panel">
+                <img src="https://placehold.co/800x600/2D5A3D/F7B32B?text=Traditional+Craftsmanship" alt="Traditional barbering craftsmanship" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            
+            <div class="content-panel">
+                <div class="reveal">
+                    <h2 class="display-lg">The <span class="story-highlight">Single Chair</span> Philosophy</h2>
+                    <p class="body-large">
+                        Richard "Ricky" Wharton made a radical choice when he opened his shop: 
+                        <span class="accent-text">one chair, one focus, one client at a time.</span>
                     </p>
-                    <p>
-                        Inspired by Victorian-era craftsmanship and traditional barbering techniques, 
-                        Ricky combines old-school attention to detail with modern precision. 
-                        Every cut includes his signature straight razor finishing.
+                    <p class="body-large">
+                        After years perfecting his craft at Dennison Dahlman, Ricky realized that true excellence 
+                        comes from undivided attention. Every cut, every conversation, every detail matters.
                     </p>
-                    <p>
-                        The result? A loyal following of clients who understand the difference 
-                        between getting a haircut and experiencing true craftsmanship. 
-                        Some, like Shea, have been coming for over 5 years.
+                    <p class="body-large">
+                        The result? Clients like Shea who've been coming for over 5 years, 
+                        following Ricky because they understand the difference between 
+                        getting a haircut and experiencing craftsmanship.
                     </p>
                     
-                    <div class="craftsmanship-points">
-                        <div class="craft-point">
+                    <div class="craftsmanship-grid">
+                        <div class="craft-item">
                             <div class="craft-icon"></div>
                             <span class="craft-text">Single Chair Focus</span>
                         </div>
-                        <div class="craft-point">
+                        <div class="craft-item">
                             <div class="craft-icon"></div>
                             <span class="craft-text">Traditional Techniques</span>
                         </div>
-                        <div class="craft-point">
+                        <div class="craft-item">
                             <div class="craft-icon"></div>
-                            <span class="craft-text">Straight Razor Finishing</span>
+                            <span class="craft-text">Straight Razor Mastery</span>
                         </div>
-                        <div class="craft-point">
+                        <div class="craft-item">
                             <div class="craft-icon"></div>
-                            <span class="craft-text">Hot Towel Service</span>
+                            <span class="craft-text">Hot Towel Ritual</span>
                         </div>
                     </div>
-                </div>
-                
-                <div class="about-image">
-                    <img src="https://placehold.co/500x400/D4AF37/8B4513?text=Traditional+Barbering+Tools" alt="Traditional barbering tools and craftsmanship">
                 </div>
             </div>
         </div>
@@ -870,110 +826,88 @@
     <!-- Services -->
     <section id="services" class="services">
         <div class="container">
-            <div class="services-header fade-in">
-                <h2>Services <span class="brass-accent">&</span> Pricing</h2>
-                <p>
-                    Master craftsmanship meets fair pricing. Every service includes our signature 
-                    attention to detail and straight razor finishing on the nape.
-                </p>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <h3 class="service-name">Adult Haircut</h3>
-                        <div class="service-price">$40</div>
-                    </div>
-                    <div class="service-duration">35 minutes • Ages 17+</div>
-                    <p class="service-description">
-                        Classic haircut with any type of fades or scissor work. 
-                        Includes straight razor shave on the nape for a clean finish.
+            <div class="reveal">
+                <div class="services-intro">
+                    <h2 class="display-lg">The Experience Menu</h2>
+                    <p class="body-large">
+                        Every service is a masterpiece in progress. Each includes our signature attention to detail 
+                        and <span class="accent-text">straight razor finishing</span> that sets us apart.
                     </p>
                 </div>
                 
-                <div class="service-card featured-service fade-in">
-                    <div class="featured-badge">Most Popular</div>
-                    <div class="service-header">
-                        <h3 class="service-name">Haircut + Beard Trim w/Razor</h3>
-                        <div class="service-price">$65</div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3 class="service-name">The Signature Cut</h3>
+                            <div class="service-price">$40</div>
+                        </div>
+                        <div class="service-duration">35 minutes • Ages 17+</div>
+                        <p class="service-description">
+                            Classic haircut with any fade style, finished with our signature straight razor work on the nape. 
+                            The foundation of everything we do.
+                        </p>
                     </div>
-                    <div class="service-duration">50 minutes • Complete experience</div>
-                    <p class="service-description">
-                        The full treatment: precision haircut, beard trim with clippers or shears, 
-                        straight razor work around edges, plus hot towel service.
-                    </p>
-                </div>
-                
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <h3 class="service-name">Youth Haircut</h3>
-                        <div class="service-price">$35</div>
+                    
+                    <div class="service-card featured-service">
+                        <div class="featured-badge">Most Popular</div>
+                        <div class="service-header">
+                            <h3 class="service-name">The Complete Experience</h3>
+                            <div class="service-price">$65</div>
+                        </div>
+                        <div class="service-duration">50 minutes • Full service</div>
+                        <p class="service-description">
+                            Precision haircut, expert beard work, straight razor finishing, and our relaxing hot towel service. 
+                            This is what sets us apart.
+                        </p>
                     </div>
-                    <div class="service-duration">35 minutes • Ages 16 & under</div>
-                    <p class="service-description">
-                        Professional haircut for young gentlemen. Same attention to detail 
-                        with patience and care appropriate for younger clients.
-                    </p>
-                </div>
-                
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <h3 class="service-name">Haircut + Beard Trim</h3>
-                        <div class="service-price">$60</div>
+                    
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3 class="service-name">Young Gentleman</h3>
+                            <div class="service-price">$35</div>
+                        </div>
+                        <div class="service-duration">35 minutes • Ages 16 & under</div>
+                        <p class="service-description">
+                            Same attention to detail for our younger clients. Teaching the importance of grooming 
+                            and self-care from an early age.
+                        </p>
                     </div>
-                    <div class="service-duration">45 minutes • No razor</div>
-                    <p class="service-description">
-                        Complete haircut and beard trim using clippers or shears. 
-                        Perfect for regular maintenance between full services.
-                    </p>
-                </div>
-                
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <h3 class="service-name">Beard Trim w/Razor</h3>
-                        <div class="service-price">$30</div>
+                    
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3 class="service-name">Beard Artistry</h3>
+                            <div class="service-price">$30</div>
+                        </div>
+                        <div class="service-duration">25 minutes • Hot towel included</div>
+                        <p class="service-description">
+                            Precision beard sculpting with straight razor perimeter work and our signature 
+                            hot towel treatment. Craftsmanship in every detail.
+                        </p>
                     </div>
-                    <div class="service-duration">25 minutes • Hot towel included</div>
-                    <p class="service-description">
-                        Precision beard shaping with straight razor work under neck 
-                        and around beard lines. Includes relaxing hot towel treatment.
-                    </p>
-                </div>
-                
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <h3 class="service-name">Beard Trim Only</h3>
-                        <div class="service-price">$25</div>
+                    
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3 class="service-name">Traditional Shave</h3>
+                            <div class="service-price">$70</div>
+                        </div>
+                        <div class="service-duration">60 minutes • Full ritual</div>
+                        <p class="service-description">
+                            The lost art of the straight razor shave. Pre-shave oils, hot towel preparation, 
+                            and expert technique for the ultimate traditional experience.
+                        </p>
                     </div>
-                    <div class="service-duration">20 minutes • Clean & precise</div>
-                    <p class="service-description">
-                        Professional beard maintenance using clippers or shears 
-                        to shape and trim facial hair to perfection.
-                    </p>
-                </div>
-                
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <h3 class="service-name">Full Straight Razor Shave</h3>
-                        <div class="service-price">$70</div>
+                    
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3 class="service-name">Touch-Up Service</h3>
+                            <div class="service-price">$25</div>
+                        </div>
+                        <div class="service-duration">20 minutes • Maintenance</div>
+                        <p class="service-description">
+                            Keep that fresh look between full services. Beard maintenance and detail work 
+                            with the same precision and care.
+                        </p>
                     </div>
-                    <div class="service-duration">60 minutes • Traditional experience</div>
-                    <p class="service-description">
-                        Complete traditional shave with pre-shave oils, hot towels, 
-                        and expert straight razor technique for the ultimate experience.
-                    </p>
-                </div>
-                
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <h3 class="service-name">Nose Wax</h3>
-                        <div class="service-price">$9</div>
-                    </div>
-                    <div class="service-duration">5 minutes • Quick service</div>
-                    <p class="service-description">
-                        Professional nose hair removal. Quick, efficient, and part 
-                        of complete grooming maintenance.
-                    </p>
                 </div>
             </div>
         </div>
@@ -982,62 +916,61 @@
     <!-- Reviews -->
     <section id="reviews" class="reviews">
         <div class="container">
-            <div class="reviews-header fade-in">
-                <h2>What Clients Say</h2>
-                <p>Real reviews from real people. 23 five-star reviews and counting.</p>
-            </div>
-            
-            <div class="reviews-grid">
-                <div class="review-card fade-in">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">
-                        "Absolutely the best barber experience I've had. One on one, calm, peaceful 
-                        and top notch quality! I won't let anyone else trim my beard."
-                    </p>
-                    <div class="review-author">— Colt Willis</div>
-                </div>
+            <div class="reveal">
+                <h2 class="display-lg">What Clients Say</h2>
                 
-                <div class="review-card fade-in">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">
-                        "I've been going to him for over 5 years and every visit is a perfect fade 
-                        with a detailed straight razor finish."
-                    </p>
-                    <div class="review-author">— Shea (5+ year client)</div>
-                </div>
-                
-                <div class="review-card fade-in">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">
-                        "Very meticulous with his craft and a great vibe in his shop. 
-                        Can tell he takes pride in his work."
-                    </p>
-                    <div class="review-author">— Tyrell Muller</div>
-                </div>
-                
-                <div class="review-card fade-in">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">
-                        "Best place we have found! Husband & two boys ages 3 & 6. 
-                        Simply amazing. 10/10"
-                    </p>
-                    <div class="review-author">— Katie Green</div>
-                </div>
-                
-                <div class="review-card fade-in">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">
-                        "Great service and very friendly. Always leave feeling and looking my best!"
-                    </p>
-                    <div class="review-author">— TJ Griggs</div>
-                </div>
-                
-                <div class="review-card fade-in">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">
-                        "You can tell he takes great pride in his work. I found my barber."
-                    </p>
-                    <div class="review-author">— Ed Mello</div>
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">
+                            "Absolutely the best barber experience I've had. One on one, calm, peaceful 
+                            and top notch quality! I won't let anyone else trim my beard."
+                        </p>
+                        <div class="review-author">— Colt Willis</div>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">
+                            "I've been going to him for over 5 years and every visit is a perfect fade 
+                            with detailed straight razor finish."
+                        </p>
+                        <div class="review-author">— Shea (5+ year client)</div>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">
+                            "Very meticulous with his craft and a great vibe in his shop. 
+                            Can tell he takes pride in his work."
+                        </p>
+                        <div class="review-author">— Tyrell Muller</div>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">
+                            "Best place we have found! Husband & two boys ages 3 & 6. 
+                            Simply amazing. 10/10"
+                        </p>
+                        <div class="review-author">— Katie Green</div>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">
+                            "Great service and very friendly. Always leave feeling and looking my best!"
+                        </p>
+                        <div class="review-author">— TJ Griggs</div>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">
+                            "You can tell he takes great pride in his work. I found my barber."
+                        </p>
+                        <div class="review-author">— Ed Mello</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1046,60 +979,62 @@
     <!-- Contact -->
     <section id="contact" class="contact">
         <div class="container">
-            <div class="contact-content fade-in">
-                <div class="contact-info">
-                    <h2>Visit the Shop</h2>
-                    
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">📍</div>
-                            <div>
-                                <strong>Shop Location</strong>
-                                11710 Stonegate Circle<br>
-                                Omaha, NE 68164
+            <div class="reveal">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2>Experience the Difference</h2>
+                        
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">📍</div>
+                                <div>
+                                    <strong>The Shop</strong>
+                                    11710 Stonegate Circle<br>
+                                    Omaha, NE 68164
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">📞</div>
+                                <div>
+                                    <strong>Call Direct</strong>
+                                    (402) 819-8821
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">📷</div>
+                                <div>
+                                    <strong>Follow Along</strong>
+                                    @rckwharton
+                                </div>
                             </div>
                         </div>
                         
-                        <div class="contact-item">
-                            <div class="contact-icon">📞</div>
-                            <div>
-                                <strong>Call Direct</strong>
-                                (402) 819-8821
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">📷</div>
-                            <div>
-                                <strong>Follow Along</strong>
-                                @rckwharton
-                            </div>
-                        </div>
+                        <a href="https://wharton-barber-shop.square.site/" class="btn-primary" target="_blank">
+                            <span>Reserve Your Time</span>
+                            <span>→</span>
+                        </a>
                     </div>
                     
-                    <a href="https://wharton-barber-shop.square.site/" class="btn" target="_blank">
-                        <span>Book Your Appointment</span>
-                        <span class="gear-icon"></span>
-                    </a>
-                </div>
-                
-                <div class="hours-display">
-                    <h3>Shop Hours</h3>
-                    <div class="hours-item">
-                        <span>Monday</span>
-                        <span>Closed</span>
-                    </div>
-                    <div class="hours-item">
-                        <span>Tuesday - Friday</span>
-                        <span>12:00 PM - 7:00 PM</span>
-                    </div>
-                    <div class="hours-item">
-                        <span>Saturday</span>
-                        <span>10:00 AM - 5:00 PM</span>
-                    </div>
-                    <div class="hours-item">
-                        <span>Sunday</span>
-                        <span>Closed</span>
+                    <div class="hours-display">
+                        <h3>Shop Hours</h3>
+                        <div class="hours-item">
+                            <span class="day">Monday</span>
+                            <span class="time">Closed</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="day">Tuesday - Friday</span>
+                            <span class="time">12:00 PM - 7:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="day">Saturday</span>
+                            <span class="time">10:00 AM - 5:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="day">Sunday</span>
+                            <span class="time">Closed</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1128,10 +1063,10 @@
             });
         });
 
-        // Fade in animation on scroll
+        // Reveal animation on scroll
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            rootMargin: '0px 0px -100px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -1142,7 +1077,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.fade-in').forEach(el => {
+        document.querySelectorAll('.reveal').forEach(el => {
             observer.observe(el);
         });
 
@@ -1150,27 +1085,12 @@
         window.addEventListener('scroll', () => {
             const header = document.querySelector('.header');
             if (window.scrollY > 50) {
-                header.style.background = 'rgba(254, 252, 248, 0.98)';
-                header.style.boxShadow = '0 2px 20px rgba(139, 69, 19, 0.2)';
+                header.style.background = 'rgba(255, 254, 247, 0.98)';
+                header.style.boxShadow = '0 2px 30px rgba(27, 67, 50, 0.15)';
             } else {
-                header.style.background = 'rgba(254, 252, 248, 0.95)';
+                header.style.background = 'rgba(255, 254, 247, 0.95)';
                 header.style.boxShadow = 'none';
             }
-        });
-
-        // Service card hover effects
-        document.querySelectorAll('.service-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                if (!this.classList.contains('featured-service')) {
-                    this.style.transform = 'translateY(-6px)';
-                }
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                if (!this.classList.contains('featured-service')) {
-                    this.style.transform = 'translateY(-4px)';
-                }
-            });
         });
     </script>
 </body>
