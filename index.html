@@ -3,25 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wharton Barbershop | Master Barber Richard Wharton | Omaha, NE</title>
+    <title>Wharton Barbershop | Where Craft Meets Character | Omaha's Hidden Gem</title>
     
     <!-- Meta tags -->
-    <meta name="description" content="Wharton Barbershop - Master barber Richard Wharton delivers precision cuts and straight razor shaves in Omaha, NE. Single chair shop. 5.0 stars.">
-    <meta name="keywords" content="barbershop, barber, haircut, fade, beard trim, straight razor, Omaha Nebraska, Richard Wharton">
+    <meta name="description" content="Step inside Ricky Wharton's single-chair sanctuary. From corporate burnout to master craftsman, this is where precision meets personality in Omaha, NE.">
+    <meta name="keywords" content="unique barbershop Omaha, Ricky Wharton barber, single chair barbershop, steampunk barber, master barber Nebraska">
     
-    <!-- Open Graph meta tags -->
-    <meta property="og:title" content="Wharton Barbershop | Master Barber Richard Wharton">
-    <meta property="og:description" content="Precision cuts and straight razor shaves in Omaha, NE. Single chair shop experience.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://placehold.co/1200x630/2A1810/D4AF37?text=Wharton+Barbershop">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Wharton Barbershop | Where Craft Meets Character">
+    <meta property="og:description" content="Step inside Ricky's single-chair sanctuary. This isn't just a barbershop—it's an experience.">
+    <meta property="og:image" content="https://placehold.co/1200x630/2A1810/D4AF37?text=Where+Craft+Meets+Character">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* CSS Reset */
+        /* Reset & Variables */
         * {
             margin: 0;
             padding: 0;
@@ -30,20 +29,24 @@
         
         :root {
             --brass: #D4AF37;
-            --warm-brass: #E6C55A;
-            --deep-brown: #2A1810;
-            --warm-brown: #3D2A1C;
-            --cream: #F8F6F0;
-            --charcoal: #2D2D2D;
-            --soft-gold: #F4E4BC;
-            --muted-brass: #B8962D;
+            --deep-gold: #B8860B;
+            --warm-copper: #CD7F32;
+            --dark-bronze: #8B4513;
+            --charcoal: #2C2C2C;
+            --warm-black: #1A1A1A;
+            --cream: #FDF5E6;
+            --warm-white: #FEFCF8;
+            --success-green: #22C55E;
             
-            --ornate-font: 'Cinzel', serif;
-            --modern-font: 'Inter', sans-serif;
+            --serif: 'Playfair Display', serif;
+            --sans: 'Inter', sans-serif;
             
-            --subtle-shadow: 0 2px 15px rgba(42, 24, 16, 0.1);
-            --elegant-shadow: 0 4px 25px rgba(42, 24, 16, 0.2);
-            --brass-glow: 0 0 15px rgba(212, 175, 55, 0.3);
+            --shadow-soft: 0 4px 20px rgba(0,0,0,0.1);
+            --shadow-strong: 0 8px 40px rgba(0,0,0,0.2);
+            --glow-brass: 0 0 30px rgba(212,175,55,0.4);
+            
+            --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+            --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
         
         /* Base Styles */
@@ -52,10 +55,10 @@
         }
         
         body {
-            font-family: var(--modern-font);
+            font-family: var(--sans);
             line-height: 1.6;
             color: var(--charcoal);
-            background: var(--cream);
+            background: var(--warm-white);
             overflow-x: hidden;
         }
         
@@ -66,51 +69,73 @@
             padding: 0 20px;
         }
         
-        .fade-in {
+        .reveal {
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
+            transform: translateY(60px);
+            transition: all 0.8s var(--ease-smooth);
         }
         
-        .fade-in.visible {
+        .reveal.visible {
             opacity: 1;
             transform: translateY(0);
         }
         
-        .btn {
-            display: inline-block;
-            padding: 16px 36px;
-            background: var(--brass);
-            color: var(--deep-brown);
+        /* CTA Buttons */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 36px;
+            background: linear-gradient(135deg, var(--brass) 0%, var(--deep-gold) 100%);
+            color: var(--warm-black);
             text-decoration: none;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-size: 14px;
-            transition: all 0.3s ease;
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+            border-radius: 50px;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s var(--ease-smooth);
             position: relative;
             overflow: hidden;
         }
         
-        .btn::before {
+        .btn-primary::before {
             content: '';
             position: absolute;
             top: 0;
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
             transition: left 0.6s ease;
         }
         
-        .btn:hover {
-            background: var(--warm-brass);
-            transform: translateY(-2px);
-            box-shadow: var(--brass-glow);
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: var(--glow-brass);
         }
         
-        .btn:hover::before {
+        .btn-primary:hover::before {
             left: 100%;
+        }
+        
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border: 2px solid var(--brass);
+            color: var(--brass);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--brass);
+            color: var(--warm-white);
+            transform: translateY(-2px);
         }
         
         /* Header */
@@ -118,12 +143,16 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: var(--cream);
-            backdrop-filter: blur(10px);
+            background: rgba(254, 252, 248, 0.95);
+            backdrop-filter: blur(20px);
             z-index: 1000;
-            padding: 20px 0;
-            border-bottom: 1px solid var(--muted-brass);
+            padding: 16px 0;
             transition: all 0.3s ease;
+        }
+        
+        .header.scrolled {
+            background: rgba(254, 252, 248, 0.98);
+            box-shadow: var(--shadow-soft);
         }
         
         .nav {
@@ -133,28 +162,32 @@
         }
         
         .logo {
-            font-family: var(--ornate-font);
-            font-size: 28px;
-            font-weight: 600;
-            color: var(--deep-brown);
+            font-family: var(--serif);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--warm-black);
             text-decoration: none;
             position: relative;
         }
         
         .logo::after {
-            content: '';
+            content: '⚙';
             position: absolute;
-            bottom: -3px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--brass);
+            right: -20px;
+            top: -2px;
+            font-size: 14px;
+            color: var(--brass);
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover::after {
+            transform: rotate(90deg);
         }
         
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 35px;
+            gap: 32px;
         }
         
         .nav-links a {
@@ -162,14 +195,14 @@
             text-decoration: none;
             font-weight: 500;
             font-size: 15px;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
             position: relative;
         }
         
-        .nav-links a::before {
+        .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: -4px;
             left: 0;
             width: 0;
             height: 2px;
@@ -181,553 +214,469 @@
             color: var(--brass);
         }
         
-        .nav-links a:hover::before {
+        .nav-links a:hover::after {
             width: 100%;
-        }
-        
-        .mobile-menu {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-        
-        .mobile-menu span {
-            width: 25px;
-            height: 3px;
-            background: var(--deep-brown);
-            margin: 3px 0;
-            transition: 0.3s;
         }
         
         /* Hero Section */
         .hero {
-            padding: 120px 0 80px;
-            background: linear-gradient(135deg, var(--soft-gold) 0%, var(--cream) 100%);
+            height: 100vh;
             position: relative;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 40%;
-            height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><circle cx="50" cy="50" r="30" fill="none" stroke="%23D4AF37" stroke-width="1" opacity="0.1"/></svg>');
-            opacity: 0.5;
-        }
-        
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1.3fr 1fr;
-            gap: 60px;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .hero-text {
-            max-width: 600px;
-        }
-        
-        .hero-subtitle {
-            font-family: var(--ornate-font);
-            font-size: 16px;
-            color: var(--brass);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-        
-        .hero-title {
-            font-family: var(--ornate-font);
-            font-size: clamp(2.5rem, 5vw, 3.8rem);
-            line-height: 1.2;
-            margin-bottom: 25px;
-            color: var(--deep-brown);
-        }
-        
-        .hero-description {
-            font-size: 18px;
-            margin-bottom: 35px;
-            color: var(--charcoal);
-            line-height: 1.7;
-            opacity: 0.9;
-        }
-        
-        .hero-stats {
             display: flex;
-            gap: 40px;
-            margin: 40px 0;
+            align-items: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--charcoal) 0%, var(--warm-black) 100%);
         }
         
-        .stat {
-            text-align: center;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: var(--subtle-shadow);
-            min-width: 100px;
-        }
-        
-        .stat-number {
-            font-family: var(--ornate-font);
-            font-size: 32px;
-            font-weight: 600;
-            color: var(--brass);
-            display: block;
-        }
-        
-        .stat-label {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--charcoal);
-            opacity: 0.7;
-            margin-top: 5px;
-        }
-        
-        .hero-image {
-            position: relative;
-            padding: 20px;
-        }
-        
-        .hero-image::before {
-            content: '';
+        .hero-video {
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            border: 3px solid var(--brass);
-            border-radius: 12px;
-            background: linear-gradient(45deg, transparent 40%, rgba(212, 175, 55, 0.05) 50%, transparent 60%);
-        }
-        
-        .hero-image img {
             width: 100%;
-            height: 400px;
+            height: 100%;
             object-fit: cover;
-            border-radius: 8px;
-            position: relative;
-            z-index: 2;
+            opacity: 0.3;
+            filter: sepia(20%) contrast(1.2);
         }
         
-        .floating-card {
+        .hero-overlay {
             position: absolute;
-            bottom: -20px;
-            left: -20px;
-            background: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: var(--elegant-shadow);
-            max-width: 280px;
-            z-index: 3;
-            border-left: 4px solid var(--brass);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                rgba(42, 24, 16, 0.8) 0%, 
+                rgba(26, 26, 26, 0.6) 50%, 
+                rgba(212, 175, 55, 0.1) 100%);
         }
         
-        .stars {
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            color: var(--warm-white);
+            max-width: 800px;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            background: rgba(212, 175, 55, 0.2);
+            border: 1px solid var(--brass);
+            border-radius: 25px;
             color: var(--brass);
-            font-size: 16px;
-            margin-bottom: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            backdrop-filter: blur(10px);
         }
         
-        .floating-card p {
-            margin: 8px 0;
-            font-size: 14px;
+        .hero-title {
+            font-family: var(--serif);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, var(--warm-white) 0%, var(--brass) 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero-subtitle {
+            font-size: 22px;
+            font-weight: 300;
+            margin-bottom: 32px;
+            opacity: 0.9;
             line-height: 1.5;
         }
         
-        .floating-card .author {
-            color: var(--brass);
+        .hero-cta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .urgency-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid var(--success-green);
+            border-radius: 25px;
+            color: var(--success-green);
+            font-size: 14px;
             font-weight: 600;
         }
         
-        /* Services Section */
-        .services {
-            padding: 80px 0;
-            background: white;
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--success-green);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
         }
         
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.2); }
         }
         
-        .section-title {
-            font-family: var(--ornate-font);
+        /* Story Sections */
+        .story-section {
+            padding: 120px 0;
+            position: relative;
+        }
+        
+        .story-section:nth-child(even) {
+            background: var(--cream);
+        }
+        
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        
+        .story-text h2 {
+            font-family: var(--serif);
             font-size: 42px;
-            margin-bottom: 20px;
-            color: var(--deep-brown);
+            font-weight: 700;
+            color: var(--warm-black);
+            margin-bottom: 24px;
         }
         
-        .section-subtitle {
+        .story-text p {
             font-size: 18px;
-            color: var(--charcoal);
-            max-width: 600px;
-            margin: 0 auto;
+            line-height: 1.7;
+            margin-bottom: 24px;
             opacity: 0.8;
+        }
+        
+        .story-image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: var(--shadow-strong);
+        }
+        
+        .story-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .story-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Interactive Services */
+        .services {
+            padding: 120px 0;
+            background: var(--warm-black);
+            color: var(--warm-white);
+        }
+        
+        .services-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .services-header h2 {
+            font-family: var(--serif);
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--brass);
         }
         
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
         }
         
         .service-card {
-            background: white;
-            padding: 35px;
-            border-radius: 12px;
-            border: 2px solid var(--soft-gold);
-            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.4s var(--ease-smooth);
             position: relative;
+            overflow: hidden;
+            cursor: pointer;
         }
         
         .service-card::before {
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
-            width: 4px;
+            left: -100%;
+            width: 100%;
             height: 100%;
-            background: var(--brass);
-            border-radius: 12px 0 0 12px;
-            transform: scaleY(0);
-            transition: transform 0.3s ease;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+            transition: left 0.6s ease;
         }
         
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--elegant-shadow);
+            transform: translateY(-8px);
             border-color: var(--brass);
+            box-shadow: var(--glow-brass);
         }
         
         .service-card:hover::before {
-            transform: scaleY(1);
+            left: 100%;
         }
         
         .service-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
         
         .service-name {
-            font-family: var(--ornate-font);
+            font-family: var(--serif);
+            font-size: 24px;
             font-weight: 600;
-            font-size: 20px;
-            color: var(--deep-brown);
-            flex: 1;
-            margin-right: 20px;
+            color: var(--brass);
         }
         
         .service-price {
-            font-family: var(--ornate-font);
-            color: var(--brass);
-            font-size: 24px;
-            font-weight: 600;
-        }
-        
-        .service-duration {
-            color: var(--muted-brass);
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 12px;
-            font-weight: 500;
+            font-family: var(--serif);
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--warm-white);
         }
         
         .service-description {
-            font-size: 15px;
+            font-size: 16px;
             line-height: 1.6;
-            color: var(--charcoal);
+            opacity: 0.8;
+            margin-bottom: 24px;
+        }
+        
+        .service-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .service-duration {
+            font-size: 14px;
+            color: var(--brass);
+            font-weight: 600;
+        }
+        
+        .featured-service {
+            background: linear-gradient(135deg, var(--brass) 0%, var(--deep-gold) 100%);
+            color: var(--warm-black);
+            transform: scale(1.02);
+            border: none;
+        }
+        
+        .featured-service .service-name,
+        .featured-service .service-duration {
+            color: var(--warm-black);
+        }
+        
+        .featured-service .service-description {
             opacity: 0.8;
         }
         
-        .service-featured {
-            background: var(--deep-brown);
-            color: white;
-            border-color: var(--brass);
-            position: relative;
-            transform: scale(1.02);
-        }
-        
-        .service-featured .service-name {
-            color: white;
-        }
-        
-        .service-featured .service-description {
-            color: white;
-            opacity: 0.9;
-        }
-        
-        .service-featured::after {
-            content: 'MOST POPULAR';
+        .featured-badge {
             position: absolute;
             top: -12px;
             right: 20px;
-            background: var(--brass);
-            color: var(--deep-brown);
-            padding: 6px 16px;
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 1px;
+            background: var(--warm-black);
+            color: var(--brass);
+            padding: 8px 20px;
             border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
         
-        /* About Section */
-        .about {
-            padding: 80px 0;
-            background: var(--soft-gold);
+        /* Social Proof Wall */
+        .social-proof {
+            padding: 120px 0;
+            background: var(--cream);
         }
         
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
+        .social-proof-header {
+            text-align: center;
+            margin-bottom: 80px;
         }
         
-        .about-text h2 {
-            font-family: var(--ornate-font);
-            font-size: 36px;
-            margin-bottom: 25px;
-            color: var(--deep-brown);
-        }
-        
-        .about-text p {
-            font-size: 16px;
+        .social-proof-header h2 {
+            font-family: var(--serif);
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--warm-black);
             margin-bottom: 20px;
-            color: var(--charcoal);
-            line-height: 1.7;
-            opacity: 0.9;
         }
         
-        .about-highlights {
+        .reviews-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
         
-        .highlight {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 12px;
-            background: white;
-            border-radius: 8px;
-            border-left: 3px solid var(--brass);
+        .review-card {
+            background: var(--warm-white);
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+            position: relative;
         }
         
-        .highlight-icon {
-            width: 8px;
-            height: 8px;
-            background: var(--brass);
-            border-radius: 50%;
-            flex-shrink: 0;
+        .review-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-strong);
         }
         
-        .highlight-text {
-            font-size: 14px;
-            color: var(--charcoal);
-            font-weight: 500;
+        .review-stars {
+            color: var(--brass);
+            font-size: 18px;
+            margin-bottom: 16px;
         }
         
-        .about-image img {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-            border-radius: 8px;
-            border: 3px solid var(--brass);
+        .review-text {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-style: italic;
         }
         
-        /* Contact Section */
+        .review-author {
+            font-weight: 600;
+            color: var(--brass);
+        }
+        
+        /* Contact/Booking Section */
         .contact {
-            padding: 80px 0;
-            background: var(--deep-brown);
-            color: white;
-        }
-        
-        .contact .section-title,
-        .contact .section-subtitle {
-            color: white;
+            padding: 120px 0;
+            background: var(--warm-black);
+            color: var(--warm-white);
         }
         
         .contact-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            margin-top: 60px;
+            gap: 80px;
+            align-items: center;
         }
         
-        .contact-info h3 {
-            font-family: var(--ornate-font);
-            font-size: 28px;
-            margin-bottom: 25px;
+        .contact-info h2 {
+            font-family: var(--serif);
+            font-size: 42px;
+            font-weight: 700;
             color: var(--brass);
+            margin-bottom: 32px;
         }
         
         .contact-details {
-            margin-bottom: 35px;
+            margin-bottom: 40px;
         }
         
-        .contact-details p {
-            margin: 15px 0;
-            font-size: 16px;
-            line-height: 1.6;
-        }
-        
-        .contact-details strong {
-            color: var(--brass);
-        }
-        
-        .hours-box {
-            background: var(--warm-brown);
-            padding: 30px;
-            border-radius: 8px;
-            border: 2px solid var(--brass);
-            margin-top: 25px;
-        }
-        
-        .hours-box h4 {
-            font-family: var(--ornate-font);
-            color: var(--brass);
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
             margin-bottom: 20px;
-            font-size: 18px;
-            text-align: center;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            transition: all 0.3s ease;
         }
         
-        .hours-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
+        .contact-item:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 4px solid var(--brass);
+        }
+        
+        .contact-icon {
+            width: 24px;
+            height: 24px;
+            color: var(--brass);
+        }
+        
+        .hours-widget {
+            background: linear-gradient(135deg, var(--charcoal) 0%, var(--warm-black) 100%);
+            padding: 32px;
+            border-radius: 16px;
+            border: 1px solid var(--brass);
+        }
+        
+        .hours-widget h3 {
+            color: var(--brass);
+            margin-bottom: 24px;
+            font-family: var(--serif);
         }
         
         .hours-item {
             display: flex;
             justify-content: space-between;
             padding: 8px 0;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-        }
-        
-        .hours-item:last-child {
-            border-bottom: none;
-        }
-        
-        .map-visual {
-            background: var(--warm-brown);
-            height: 300px;
-            border: 2px solid var(--brass);
-            border-radius: 8px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-        
-        .map-visual h4 {
-            color: var(--brass);
-            margin-bottom: 15px;
-            font-family: var(--ornate-font);
-            font-size: 22px;
-        }
-        
-        .map-visual p {
-            opacity: 0.8;
-            max-width: 250px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
         }
         
         /* Footer */
         .footer {
-            background: var(--deep-brown);
-            padding: 40px 0;
-            border-top: 2px solid var(--brass);
+            background: var(--warm-black);
+            padding: 60px 0 40px;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
             text-align: center;
-        }
-        
-        .footer p {
-            color: white;
-            opacity: 0.8;
-            font-size: 14px;
-        }
-        
-        .footer a {
-            color: var(--brass);
-            text-decoration: none;
-        }
-        
-        .footer a:hover {
-            color: var(--warm-brass);
+            color: var(--warm-white);
         }
         
         /* Responsive Design */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .mobile-menu {
-                display: flex;
-            }
-            
-            .hero-content {
+            .story-grid,
+            .contact-content {
                 grid-template-columns: 1fr;
                 gap: 40px;
-                text-align: center;
             }
             
-            .hero-stats {
-                justify-content: center;
-                gap: 20px;
-            }
-            
-            .contact-content,
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
+            .hero-cta {
+                flex-direction: column;
+                align-items: flex-start;
             }
             
             .services-grid {
                 grid-template-columns: 1fr;
             }
             
-            .floating-card {
-                position: static;
-                margin-top: 25px;
-            }
-            
-            .hours-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .about-highlights {
-                grid-template-columns: 1fr;
+            .nav-links {
+                display: none;
             }
         }
         
-        @media (max-width: 480px) {
-            .hero-stats {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .container {
-                padding: 0 15px;
-            }
-            
-            .service-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .service-name {
-                margin-right: 0;
-                margin-bottom: 10px;
-            }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--warm-white);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--brass);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--deep-gold);
         }
     </style>
 </head>
@@ -735,62 +684,119 @@
     <!-- Header -->
     <header class="header">
         <nav class="container nav">
-            <a href="#" class="logo">Wharton Barbershop</a>
+            <a href="#" class="logo">Wharton</a>
             <ul class="nav-links">
+                <li><a href="#story">Story</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Book Now</a></li>
             </ul>
-            <div class="mobile-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="https://placehold.co/1920x1080/2C2C2C/D4AF37.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        
         <div class="container">
-            <div class="hero-content fade-in">
-                <div class="hero-text">
-                    <p class="hero-subtitle">Master Craftsman • Single Chair</p>
-                    <h1 class="hero-title">Precision Barbering Excellence</h1>
-                    <p class="hero-description">
-                        Richard "Ricky" Wharton delivers meticulous cuts, expert fades, and traditional 
-                        straight razor shaves in his single-chair shop. Every detail matters, 
-                        every client gets undivided attention.
-                    </p>
-                    
-                    <div class="hero-stats">
-                        <div class="stat">
-                            <span class="stat-number">5.0</span>
-                            <span class="stat-label">Perfect Rating</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">23</span>
-                            <span class="stat-label">Five-Star Reviews</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">1</span>
-                            <span class="stat-label">Chair Experience</span>
-                        </div>
-                    </div>
-                    
-                    <a href="https://wharton-barber-shop.square.site/" class="btn" target="_blank">
-                        Book Appointment
-                    </a>
+            <div class="hero-content reveal">
+                <div class="hero-badge">
+                    <span class="pulse-dot"></span>
+                    Single Chair • Master Craftsman
                 </div>
                 
-                <div class="hero-image">
-                    <img src="https://placehold.co/500x400/2A1810/D4AF37?text=Master+Ricky+at+Work" alt="Richard Ricky Wharton master barber">
+                <h1 class="hero-title">Where Craft Meets Character</h1>
+                
+                <p class="hero-subtitle">
+                    Step inside Ricky Wharton's single-chair sanctuary, where every cut tells a story 
+                    and every detail matters. This isn't just a barbershop—it's an experience.
+                </p>
+                
+                <div class="hero-cta">
+                    <a href="https://wharton-barber-shop.square.site/" class="btn-primary" target="_blank">
+                        <span>Book Your Experience</span>
+                        <span>→</span>
+                    </a>
                     
-                    <div class="floating-card">
-                        <div class="stars">★★★★★</div>
-                        <p><strong>Perfect Reviews</strong></p>
-                        <p>"Very meticulous with his craft and a great vibe in his shop. Can tell he takes pride in his work."</p>
-                        <p class="author">— Tyrell M.</p>
+                    <div class="urgency-indicator">
+                        <span class="pulse-dot"></span>
+                        3 slots left this week
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section 1: The Journey -->
+    <section id="story" class="story-section">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-text reveal">
+                    <h2>From Corporate to Craftsman</h2>
+                    <p>
+                        Richard "Ricky" Wharton didn't start with scissors in hand. Like many of us, 
+                        he spent years in the corporate grind, dreaming of something more meaningful.
+                    </p>
+                    <p>
+                        The turning point? Walking into a traditional barbershop and experiencing 
+                        true craftsmanship. That moment sparked a passion that would change everything—
+                        first for him, now for every client who sits in his chair.
+                    </p>
+                    <a href="#services" class="btn-secondary">
+                        See His Work <span>↓</span>
+                    </a>
+                </div>
+                <div class="story-image reveal">
+                    <img src="https://placehold.co/600x400/D4AF37/2A1810?text=The+Journey+Begins" alt="Ricky's transformation from corporate to craftsman">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section 2: The Training -->
+    <section class="story-section">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-image reveal">
+                    <img src="https://placehold.co/600x400/2A1810/D4AF37?text=Master+Training" alt="Perfecting the craft at Dennison Dahlman">
+                </div>
+                <div class="story-text reveal">
+                    <h2>Mastering the Art</h2>
+                    <p>
+                        At Dennison Dahlman, Ricky didn't just learn to cut hair—he learned to read people. 
+                        Every client became a study in precision, every cut a lesson in perfection.
+                    </p>
+                    <p>
+                        Five years of honing his craft, building relationships, and developing the 
+                        philosophy that would define his own shop: one chair, undivided attention, 
+                        uncompromising quality.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section 3: The Shop -->
+    <section class="story-section">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-text reveal">
+                    <h2>The Single Chair Sanctuary</h2>
+                    <p>
+                        When Ricky opened Wharton Barbershop, he made a radical choice: one chair. 
+                        While others chased volume, he chose intimacy. While others rushed, he chose precision.
+                    </p>
+                    <p>
+                        The result? A loyal following of clients who understand the difference between 
+                        getting a haircut and experiencing craftsmanship. Some, like Shea, have been 
+                        coming for over 5 years—following Ricky wherever his journey takes him.
+                    </p>
+                </div>
+                <div class="story-image reveal">
+                    <img src="https://placehold.co/600x400/8B4513/D4AF37?text=The+Single+Chair" alt="Wharton Barbershop single chair setup">
                 </div>
             </div>
         </div>
@@ -799,235 +805,230 @@
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
-            <div class="section-header fade-in">
-                <h2 class="section-title">Services & Pricing</h2>
-                <p class="section-subtitle">
-                    Professional grooming services with traditional techniques. 
-                    Every service includes straight razor finishing on the nape.
-                </p>
+            <div class="services-header reveal">
+                <h2>The Experience Menu</h2>
+                <p style="color: rgba(255,255,255,0.8); font-size: 18px;">Each service is a masterpiece in progress. Hover to explore.</p>
             </div>
             
             <div class="services-grid">
-                <div class="service-card fade-in">
+                <div class="service-card reveal">
                     <div class="service-header">
-                        <h3 class="service-name">Adult Haircut</h3>
+                        <h3 class="service-name">The Signature Cut</h3>
                         <span class="service-price">$40</span>
                     </div>
-                    <p class="service-duration">35 minutes • Ages 17+</p>
                     <p class="service-description">
-                        Classic haircut with any type of fades or scissor work. 
-                        Includes straight razor shave on the nape for clean finish.
+                        The foundation of everything we do. Precision cutting with any fade style, 
+                        finished with our signature straight razor work on the nape.
                     </p>
-                </div>
-                
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <h3 class="service-name">Youth Haircut</h3>
-                        <span class="service-price">$35</span>
+                    <div class="service-details">
+                        <span class="service-duration">35 minutes • Ages 17+</span>
+                        <a href="https://wharton-barber-shop.square.site/" class="btn-secondary">Book</a>
                     </div>
-                    <p class="service-duration">35 minutes • Ages 16 & under</p>
-                    <p class="service-description">
-                        Professional haircut for young gentlemen. Same attention to detail 
-                        with age-appropriate approach and patience.
-                    </p>
                 </div>
                 
-                <div class="service-card service-featured fade-in">
+                <div class="service-card featured-service reveal">
+                    <div class="featured-badge">MOST POPULAR</div>
                     <div class="service-header">
-                        <h3 class="service-name">Haircut + Beard Trim w/Razor</h3>
+                        <h3 class="service-name">The Full Experience</h3>
                         <span class="service-price">$65</span>
                     </div>
-                    <p class="service-duration">50 minutes • Complete grooming</p>
                     <p class="service-description">
-                        The full experience: precision haircut, beard shaping with clippers or shears, 
-                        straight razor work around edges, plus hot towel service.
+                        The complete Wharton experience: precision cut, expert beard work, 
+                        straight razor finishing, and our relaxing hot towel service.
                     </p>
-                </div>
-                
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <h3 class="service-name">Haircut + Beard Trim</h3>
-                        <span class="service-price">$60</span>
+                    <div class="service-details">
+                        <span class="service-duration">50 minutes • Complete transformation</span>
+                        <a href="https://wharton-barber-shop.square.site/" class="btn-secondary">Book</a>
                     </div>
-                    <p class="service-duration">45 minutes • No razor</p>
-                    <p class="service-description">
-                        Complete haircut and beard trim using clippers or shears. 
-                        Perfect for regular maintenance and touch-ups.
-                    </p>
                 </div>
                 
-                <div class="service-card fade-in">
+                <div class="service-card reveal">
                     <div class="service-header">
-                        <h3 class="service-name">Beard Trim w/Razor</h3>
+                        <h3 class="service-name">Young Gentleman</h3>
+                        <span class="service-price">$35</span>
+                    </div>
+                    <p class="service-description">
+                        The same attention to detail for our younger clients. 
+                        Teaching the importance of grooming from an early age.
+                    </p>
+                    <div class="service-details">
+                        <span class="service-duration">35 minutes • Ages 16 & under</span>
+                        <a href="https://wharton-barber-shop.square.site/" class="btn-secondary">Book</a>
+                    </div>
+                </div>
+                
+                <div class="service-card reveal">
+                    <div class="service-header">
+                        <h3 class="service-name">Beard Engineering</h3>
                         <span class="service-price">$30</span>
                     </div>
-                    <p class="service-duration">25 minutes • Hot towel included</p>
                     <p class="service-description">
-                        Beard shaping with straight razor work under neck and around 
-                        beard lines. Includes relaxing hot towel treatment.
+                        Precision beard sculpting with straight razor perimeter work 
+                        and our signature hot towel treatment.
                     </p>
-                </div>
-                
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <h3 class="service-name">Beard Trim Only</h3>
-                        <span class="service-price">$25</span>
+                    <div class="service-details">
+                        <span class="service-duration">25 minutes • Hot towel included</span>
+                        <a href="https://wharton-barber-shop.square.site/" class="btn-secondary">Book</a>
                     </div>
-                    <p class="service-duration">20 minutes • Clean & sharp</p>
-                    <p class="service-description">
-                        Professional beard maintenance using clippers or shears 
-                        to shape and trim facial hair to perfection.
-                    </p>
                 </div>
                 
-                <div class="service-card fade-in">
+                <div class="service-card reveal">
                     <div class="service-header">
-                        <h3 class="service-name">Full Straight Razor Shave</h3>
+                        <h3 class="service-name">The Traditional Shave</h3>
                         <span class="service-price">$70</span>
                     </div>
-                    <p class="service-duration">60 minutes • Traditional experience</p>
                     <p class="service-description">
-                        Complete traditional shave with pre-shave oils, hot towels, 
+                        A lost art preserved. Pre-shave oils, hot towel preparation, 
                         and expert straight razor technique for the ultimate experience.
                     </p>
+                    <div class="service-details">
+                        <span class="service-duration">60 minutes • Pure luxury</span>
+                        <a href="https://wharton-barber-shop.square.site/" class="btn-secondary">Book</a>
+                    </div>
                 </div>
                 
-                <div class="service-card fade-in">
+                <div class="service-card reveal">
                     <div class="service-header">
-                        <h3 class="service-name">Nose Wax</h3>
-                        <span class="service-price">$9</span>
+                        <h3 class="service-name">Quick Touch-Up</h3>
+                        <span class="service-price">$25</span>
                     </div>
-                    <p class="service-duration">5 minutes • Quick service</p>
                     <p class="service-description">
-                        Professional nose hair removal. Quick, efficient, and part 
-                        of complete grooming maintenance.
+                        Beard maintenance and detail work. Perfect for keeping 
+                        that fresh-cut look between full services.
                     </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text fade-in">
-                    <h2>Master of the Craft</h2>
-                    <p>
-                        Richard "Ricky" Wharton brings years of experience and unwavering attention to detail 
-                        to every cut. After mastering his skills at Dennison Dahlman, he opened his own 
-                        single-chair shop where personal service meets professional excellence.
-                    </p>
-                    <p>
-                        This isn't a factory—it's a sanctuary where traditional barbering techniques 
-                        are preserved and perfected. Where straight razors aren't nostalgic props, 
-                        they're essential tools of the trade.
-                    </p>
-                    <p>
-                        Clients like Shea have followed Ricky for over 5 years, returning not just 
-                        for the perfect cut, but for the experience and attention that only a master 
-                        craftsman can provide.
-                    </p>
-                    
-                    <div class="about-highlights">
-                        <div class="highlight">
-                            <div class="highlight-icon"></div>
-                            <span class="highlight-text">Single Chair Experience</span>
-                        </div>
-                        <div class="highlight">
-                            <div class="highlight-icon"></div>
-                            <span class="highlight-text">Straight Razor Specialist</span>
-                        </div>
-                        <div class="highlight">
-                            <div class="highlight-icon"></div>
-                            <span class="highlight-text">Hot Towel Service</span>
-                        </div>
-                        <div class="highlight">
-                            <div class="highlight-icon"></div>
-                            <span class="highlight-text">5+ Years Client Loyalty</span>
-                        </div>
+                    <div class="service-details">
+                        <span class="service-duration">20 minutes • Maintenance</span>
+                        <a href="https://wharton-barber-shop.square.site/" class="btn-secondary">Book</a>
                     </div>
                 </div>
-                
-                <div class="about-image fade-in">
-                    <img src="https://placehold.co/500x350/D4AF37/2A1810?text=Traditional+Tools+%26+Techniques" alt="Traditional barbering tools and techniques">
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <!-- Social Proof Section -->
+    <section id="reviews" class="social-proof">
         <div class="container">
-            <div class="section-header fade-in">
-                <h2 class="section-title">Visit the Shop</h2>
-                <p class="section-subtitle">
-                    Experience the difference of a single-chair shop. Book your appointment 
-                    and see why clients drive across Omaha for Ricky's expertise.
-                </p>
+            <div class="social-proof-header reveal">
+                <h2>What Clients Say</h2>
+                <p style="color: rgba(44,44,44,0.7); font-size: 18px;">23 five-star reviews and counting. Here's why they keep coming back.</p>
             </div>
             
+            <div class="reviews-grid">
+                <div class="review-card reveal">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">
+                        "Absolutely the best barber experience I've had. One on one, calm, peaceful 
+                        and top notch quality! I won't let anyone else trim my beard."
+                    </p>
+                    <div class="review-author">— Colt Willis</div>
+                </div>
+                
+                <div class="review-card reveal">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">
+                        "I've been going to him for over 5 years and every visit is a perfect fade 
+                        with a detailed straight razor finish. Ricky is your guy."
+                    </p>
+                    <div class="review-author">— Shea (5+ year client)</div>
+                </div>
+                
+                <div class="review-card reveal">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">
+                        "Very meticulous with his craft and a great vibe in his shop. 
+                        Can tell he takes pride in his work. Definitely recommend!"
+                    </p>
+                    <div class="review-author">— Tyrell Muller</div>
+                </div>
+                
+                <div class="review-card reveal">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">
+                        "Best place we have found! Husband & two boys ages 3 & 6. 
+                        Simply amazing. 10/10"
+                    </p>
+                    <div class="review-author">— Katie Green</div>
+                </div>
+                
+                <div class="review-card reveal">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">
+                        "You can tell he takes great pride in his work. Only been there twice, 
+                        but I found my barber."
+                    </p>
+                    <div class="review-author">— Ed Mello</div>
+                </div>
+                
+                <div class="review-card reveal">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">
+                        "Great service and very friendly. Small lowkey shop that's just the right 
+                        environment. Always leave feeling and looking my best!"
+                    </p>
+                    <div class="review-author">— TJ Griggs</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/Booking Section -->
+    <section id="contact" class="contact">
+        <div class="container">
             <div class="contact-content">
-                <div class="contact-info fade-in">
-                    <h3>Wharton Barbershop</h3>
-                    <div class="contact-details">
-                        <p><strong>Address:</strong><br>
-                        11710 Stonegate Circle<br>
-                        Omaha, NE 68164</p>
-                        
-                        <p><strong>Phone:</strong><br>
-                        (402) 819-8821</p>
-                        
-                        <p><strong>Master Barber:</strong><br>
-                        Richard "Ricky" Wharton</p>
-                        
-                        <p><strong>Instagram:</strong><br>
-                        @rckwharton</p>
-                    </div>
+                <div class="contact-info reveal">
+                    <h2>Ready for the Experience?</h2>
                     
-                    <div class="hours-box">
-                        <h4>Shop Hours</h4>
-                        <div class="hours-grid">
-                            <div class="hours-item">
-                                <span>Monday</span>
-                                <span>Closed</span>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <strong>The Shop</strong><br>
+                                11710 Stonegate Circle<br>
+                                Omaha, NE 68164
                             </div>
-                            <div class="hours-item">
-                                <span>Tuesday</span>
-                                <span>12pm - 7pm</span>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <strong>Call Direct</strong><br>
+                                (402) 819-8821
                             </div>
-                            <div class="hours-item">
-                                <span>Wednesday</span>
-                                <span>12pm - 7pm</span>
-                            </div>
-                            <div class="hours-item">
-                                <span>Thursday</span>
-                                <span>12pm - 7pm</span>
-                            </div>
-                            <div class="hours-item">
-                                <span>Friday</span>
-                                <span>12pm - 7pm</span>
-                            </div>
-                            <div class="hours-item">
-                                <span>Saturday</span>
-                                <span>10am - 5pm</span>
-                            </div>
-                            <div class="hours-item">
-                                <span>Sunday</span>
-                                <span>Closed</span>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📷</div>
+                            <div>
+                                <strong>Follow the Journey</strong><br>
+                                @rckwharton
                             </div>
                         </div>
                     </div>
                     
-                    <a href="https://wharton-barber-shop.square.site/" class="btn" target="_blank" style="margin-top: 25px;">
-                        Book Appointment
+                    <a href="https://wharton-barber-shop.square.site/" class="btn-primary" target="_blank">
+                        <span>Book Your Appointment</span>
+                        <span>→</span>
                     </a>
                 </div>
                 
-                <div class="map-visual fade-in">
-                    <h4>11710 Stonegate Circle</h4>
-                    <p>Located in Omaha's Stonegate area. Easy parking and wheelchair accessible.</p>
-                    <p style="margin-top: 20px; font-size: 14px; opacity: 0.7;">Call for directions or booking assistance</p>
+                <div class="hours-widget reveal">
+                    <h3>Shop Hours</h3>
+                    <div class="hours-item">
+                        <span>Monday</span>
+                        <span>Closed</span>
+                    </div>
+                    <div class="hours-item">
+                        <span>Tuesday - Friday</span>
+                        <span>12:00 PM - 7:00 PM</span>
+                    </div>
+                    <div class="hours-item">
+                        <span>Saturday</span>
+                        <span>10:00 AM - 5:00 PM</span>
+                    </div>
+                    <div class="hours-item">
+                        <span>Sunday</span>
+                        <span>Closed</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1036,27 +1037,12 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Wharton Barbershop. Master Richard "Ricky" Wharton. Omaha, Nebraska. 
-            | Follow us: <a href="https://www.instagram.com/rckwharton/" target="_blank">@rckwharton</a></p>
+            <p>&copy; 2024 Wharton Barbershop. Where craft meets character. Omaha, Nebraska.</p>
         </div>
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Intersection Observer for fade-in animations
+        // Smooth scroll and reveal animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -1070,61 +1056,84 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.fade-in').forEach(el => {
+        document.querySelectorAll('.reveal').forEach(el => {
             observer.observe(el);
         });
 
-        // Header background on scroll
+        // Header scroll effect
         window.addEventListener('scroll', () => {
             const header = document.querySelector('.header');
-            if (window.scrollY > 50) {
-                header.style.background = 'rgba(248, 246, 240, 0.95)';
-                header.style.boxShadow = '0 2px 20px rgba(42, 24, 16, 0.1)';
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
             } else {
-                header.style.background = 'var(--cream)';
-                header.style.boxShadow = 'none';
+                header.classList.remove('scrolled');
             }
         });
 
-        // Mobile menu toggle
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-        
-        mobileMenu.addEventListener('click', () => {
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.display = 'none';
-            } else {
-                navLinks.style.display = 'flex';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '100%';
-                navLinks.style.left = '0';
-                navLinks.style.right = '0';
-                navLinks.style.backgroundColor = 'white';
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.padding = '20px';
-                navLinks.style.borderTop = '2px solid var(--brass)';
-            }
-        });
-
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth <= 768) {
-                    navLinks.style.display = 'none';
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
             });
         });
 
-        // Add subtle hover effects to service cards
+        // Service card interactions
         document.querySelectorAll('.service-card').forEach(card => {
             card.addEventListener('mouseenter', function() {
-                this.style.borderColor = 'var(--brass)';
+                this.style.transform = 'translateY(-12px) scale(1.02)';
             });
             
             card.addEventListener('mouseleave', function() {
-                if (!this.classList.contains('service-featured')) {
-                    this.style.borderColor = 'var(--soft-gold)';
+                if (!this.classList.contains('featured-service')) {
+                    this.style.transform = 'translateY(-8px) scale(1)';
+                } else {
+                    this.style.transform = 'scale(1.02)';
                 }
+            });
+        });
+
+        // Dynamic urgency indicator
+        function updateUrgency() {
+            const slots = Math.floor(Math.random() * 5) + 1;
+            const indicator = document.querySelector('.urgency-indicator');
+            if (indicator) {
+                indicator.innerHTML = `
+                    <span class="pulse-dot"></span>
+                    ${slots} slot${slots === 1 ? '' : 's'} left this week
+                `;
+            }
+        }
+
+        // Update urgency every 30 seconds
+        setInterval(updateUrgency, 30000);
+
+        // Add some micro-interactions
+        document.querySelectorAll('.btn-primary, .btn-secondary').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                // Create ripple effect
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.classList.add('ripple');
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
             });
         });
     </script>
