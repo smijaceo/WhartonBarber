@@ -94,6 +94,37 @@
             overflow-x: hidden;
         }
         
+        /* Mobile background fix */
+        @media (max-width: 768px) {
+            body {
+                /* Fallback solid background */
+                background-color: var(--iron-black);
+                background: 
+                    linear-gradient(135deg, var(--iron-black) 0%, var(--coal-smoke) 50%, #0A0A0A 100%);
+                background-attachment: scroll;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                min-height: 100vh;
+            }
+        }
+        
+        /* iOS Safari background fix */
+        @supports (-webkit-touch-callout: none) {
+            body {
+                background-color: var(--iron-black);
+                background-attachment: scroll;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+            }
+        }
+        
+        /* Fallback for very old browsers */
+        @media (max-width: 480px) {
+            body {
+                background: var(--iron-black);
+            }
+        }
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -1218,6 +1249,21 @@
             .steam-effect {
                 opacity: 0.4;
                 animation-duration: 5s;
+            }
+            
+            /* Background pattern optimizations for mobile */
+            .hero-workshop::before,
+            .services-apparatus::before {
+                opacity: 0.2;
+                background-size: 80px 80px;
+            }
+            
+            /* Ensure backgrounds work on mobile */
+            .hero-workshop,
+            .services-apparatus,
+            .testimonials,
+            .contact-workshop {
+                background-attachment: scroll;
             }
             
             /* Typography fine-tuning */
