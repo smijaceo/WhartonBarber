@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wharton Barbershop | Master Barber Richard Wharton | Omaha, NE</title>
+    
+    <!-- Meta tags for better SEO and link previews -->
+    <meta name="description" content="Wharton Barbershop - Master barber Richard 'Ricky' Wharton delivers premium cuts, straight razor shaves, and hot towel service in Omaha, NE. 5.0 stars, single chair shop experience.">
+    <meta name="keywords" content="barbershop, barber, haircut, fade, beard trim, straight razor, hot towel, Omaha Nebraska, Richard Wharton, Ricky">
+    
+    <!-- Open Graph meta tags for link previews -->
+    <meta property="og:title" content="Wharton Barbershop | Master Barber Richard Wharton">
+    <meta property="og:description" content="Premium cuts, straight razor shaves, and hot towel service in Omaha, NE. Single chair shop experience with 5.0 star reviews.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://whartonbarbershop.com">
+    <meta property="og:image" content="https://placehold.co/1200x630/A0725F/ffffff?text=Wharton+Barbershop+Omaha">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Sans+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --deep-blue: #1B365D;
+            --rust-orange: #E07A5F;
+            --warm-cream: #F5F3F0;
+            --charcoal: #2D2D2D;
+            --warm-white: #FDFCFA;
+            --sage-green: #8B9A7F;
+            --gold-accent: #D4AF37;
+            
+            --serif: 'Playfair Display', serif;
+            --sans: 'Source Sans Pro', sans-serif;
+            
+            --shadow-soft: 0 4px 20px rgba(27, 54, 93, 0.1);
+            --shadow-medium: 0 8px 30px rgba(27, 54, 93, 0.15);
+            
+            --ease-out: cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--sans);
+            line-height: 1.6;
+            color: var(--charcoal);
+            background-color: var(--warm-white);
+            overflow-x: hidden;
+        }
+        
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s var(--ease-out);
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 16px 36px;
+            background: var(--rust-orange);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border-radius: 3px;
+            transition: all 0.3s var(--ease-out);
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+        
+        .btn:hover {
+            background: #C66B4F;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--rust-orange);
+            border: 2px solid var(--rust-orange);
+        }
+        
+        .btn-outline:hover {
+            background: var(--rust-orange);
+            color: white;
+        }
+        
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(253, 252, 250, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: var(--serif);
+            font-size: 26px;
+            font-weight: 600;
+            color: var(--deep-blue);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: var(--charcoal);
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s ease;
+            font-size: 15px;
+        }
+        
+        .nav-links a:hover {
+            color: var(--rust-orange);
+        }
+        
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .mobile-menu span {
+            width: 25px;
+            height: 2px;
+            background: var(--charcoal);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(135deg, var(--warm-cream) 0%, var(--warm-white) 100%);
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: var(--deep-blue);
+            opacity: 0.03;
+            transform: skewX(-15deg);
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .hero-text h1 {
+            font-family: var(--serif);
+            font-size: clamp(3rem, 6vw, 5rem);
+            line-height: 1.1;
+            margin-bottom: 25px;
+            color: var(--deep-blue);
+        }
+        
+        .hero-text .subtitle {
+            font-size: 20px;
+            color: var(--rust-orange);
+            margin-bottom: 20px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+        
+        .hero-text .description {
+            font-size: 18px;
+            margin-bottom: 35px;
+            color: #666;
+            max-width: 450px;
+            line-height: 1.7;
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin: 40px 0;
+        }
+        
+        .stat {
+            text-align: left;
+        }
+        
+        .stat-number {
+            font-family: var(--serif);
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--deep-blue);
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #999;
+        }
+        
+        .hero-image {
+            position: relative;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: 550px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .floating-card {
+            position: absolute;
+            bottom: -25px;
+            left: -25px;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-soft);
+            max-width: 220px;
+        }
+        
+        .stars {
+            color: var(--gold-accent);
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        
+        .floating-card p {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        
+        .floating-card .author {
+            color: var(--rust-orange);
+            font-weight: 600;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 120px 0;
+            background: var(--warm-white);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .section-title {
+            font-family: var(--serif);
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--deep-blue);
+        }
+        
+        .section-subtitle {
+            font-size: 18px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 35px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.3s var(--ease-out);
+            border-left: 4px solid transparent;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-left-color: var(--rust-orange);
+        }
+        
+        .service-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .service-name {
+            font-weight: 600;
+            font-size: 20px;
+            color: var(--deep-blue);
+            flex: 1;
+        }
+        
+        .service-price {
+            color: var(--rust-orange);
+            font-weight: 600;
+            font-size: 24px;
+            font-family: var(--serif);
+        }
+        
+        .service-duration {
+            color: #999;
+            font-size: 14px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .service-description {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .service-highlight {
+            background: var(--deep-blue);
+            color: white;
+        }
+        
+        .service-highlight .service-name {
+            color: white;
+        }
+        
+        .service-highlight .service-price {
+            color: var(--rust-orange);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 120px 0;
+            background: var(--warm-cream);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            font-family: var(--serif);
+            font-size: 42px;
+            margin-bottom: 25px;
+            color: var(--deep-blue);
+        }
+        
+        .about-text p {
+            font-size: 17px;
+            margin-bottom: 20px;
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        .about-highlights {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .highlight {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .highlight-icon {
+            width: 12px;
+            height: 12px;
+            background: var(--rust-orange);
+            border-radius: 50%;
+        }
+        
+        .highlight-text {
+            font-size: 14px;
+            color: var(--charcoal);
+            font-weight: 500;
+        }
+        
+        .about-image {
+            position: relative;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: var(--shadow-medium);
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            padding: 120px 0;
+            background: var(--warm-white);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 80px;
+        }
+        
+        .testimonial {
+            background: white;
+            padding: 35px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-soft);
+            position: relative;
+        }
+        
+        .testimonial::before {
+            content: '"';
+            font-family: var(--serif);
+            font-size: 60px;
+            color: var(--rust-orange);
+            position: absolute;
+            top: 15px;
+            left: 25px;
+            opacity: 0.3;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 25px;
+            font-size: 16px;
+            line-height: 1.7;
+            padding-left: 20px;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--deep-blue);
+            padding-left: 20px;
+        }
+        
+        .testimonial-stars {
+            color: var(--gold-accent);
+            font-size: 14px;
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 120px 0;
+            background: var(--deep-blue);
+            color: white;
+        }
+        
+        .contact .section-title,
+        .contact .section-subtitle {
+            color: white;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            margin-top: 80px;
+        }
+        
+        .contact-info h3 {
+            font-family: var(--serif);
+            font-size: 28px;
+            margin-bottom: 25px;
+            color: var(--warm-cream);
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-details p {
+            margin: 12px 0;
+            font-size: 16px;
+        }
+        
+        .contact-details strong {
+            color: var(--rust-orange);
+        }
+        
+        .hours {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        
+        .hours h4 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: var(--warm-cream);
+        }
+        
+        .hours-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+        
+        .hours-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+        
+        .map-placeholder {
+            background: rgba(255, 255, 255, 0.1);
+            height: 350px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #ccc;
+            text-align: center;
+        }
+        
+        .map-placeholder h4 {
+            margin-bottom: 10px;
+            color: var(--warm-cream);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--deep-blue);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer p {
+            color: #ccc;
+            font-size: 14px;
+        }
+        
+        .footer a {
+            color: var(--rust-orange);
+            text-decoration: none;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: flex;
+            }
+            
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 50px;
+            }
+            
+            .hero-stats {
+                justify-content: center;
+            }
+            
+            .contact-content,
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .floating-card {
+                position: static;
+                margin-top: 25px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hours-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-highlights {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-stats {
+                flex-direction: column;
+                gap: 25px;
+                text-align: center;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="container nav">
+            <a href="#" class="logo">Wharton Barbershop</a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <div class="hero-text">
+                    <p class="subtitle">Single Chair. Master Craft.</p>
+                    <h1>Where precision meets passion.</h1>
+                    <p class="description">
+                        Richard "Ricky" Wharton has mastered the art of barbering—from flawless fades to 
+                        old-school straight razor shaves. Every cut is personal, every detail matters.
+                    </p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">5.0</span>
+                            <span class="stat-label">Perfect Rating</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">1</span>
+                            <span class="stat-label">Chair Experience</span>
+                        </div>
+                    </div>
+                    
+                    <a href="https://wharton-barber-shop.square.site/" class="btn" target="_blank">Book Appointment</a>
+                </div>
+                
+                <div class="hero-image">
+                    <img src="https://placehold.co/500x550/1B365D/ffffff?text=Ricky+at+Work" alt="Richard Ricky Wharton master barber at work">
+                    <div class="floating-card">
+                        <div class="stars">★★★★★</div>
+                        <p><strong>23 Perfect Reviews</strong></p>
+                        <p>"Very meticulous with his craft and a great vibe in his shop."</p>
+                        <p class="author">— Tyrell</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">The Experience</h2>
+                <p class="section-subtitle">
+                    Every service includes Ricky's signature attention to detail and straight razor finish on the nape. 
+                    This is barbering the way it should be.
+                </p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-header">
+                        <h3 class="service-name">Adult Haircut</h3>
+                        <span class="service-price">$40</span>
+                    </div>
+                    <p class="service-duration">35 minutes • Ages 17+</p>
+                    <p class="service-description">Classic haircut with any type of fades or scissor work. Includes straight razor shave on the nape for that perfect finish.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-header">
+                        <h3 class="service-name">Youth Haircut</h3>
+                        <span class="service-price">$35</span>
+                    </div>
+                    <p class="service-duration">35 minutes • Ages 16 & under</p>
+                    <p class="service-description">Professional haircut for young gentlemen. Same attention to detail, age-appropriate approach.</p>
+                </div>
+                
+                <div class="service-card fade-in service-highlight">
+                    <div class="service-header">
+                        <h3 class="service-name">Haircut + Beard Trim w/Razor</h3>
+                        <span class="service-price">$65</span>
+                    </div>
+                    <p class="service-duration">50 minutes • The Full Experience</p>
+                    <p class="service-description">Complete grooming service. Haircut, beard trim with clippers or shears, straight razor work, and hot towel service.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-header">
+                        <h3 class="service-name">Haircut + Beard Trim (No Razor)</h3>
+                        <span class="service-price">$60</span>
+                    </div>
+                    <p class="service-duration">45 minutes • Clean & Sharp</p>
+                    <p class="service-description">Haircut with precision beard trim using clippers or shears. Perfect for maintenance and touch-ups.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-header">
+                        <h3 class="service-name">Beard Trim w/Razor</h3>
+                        <span class="service-price">$30</span>
+                    </div>
+                    <p class="service-duration">25 minutes • Hot Towel Service</p>
+                    <p class="service-description">Precision beard shaping with straight razor work under the neck and around beard lines. Includes hot towel treatment.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-header">
+                        <h3 class="service-name">Beard Trim (No Razor)</h3>
+                        <span class="service-price">$25</span>
+                    </div>
+                    <p class="service-duration">20 minutes • Clean Lines</p>
+                    <p class="service-description">Professional beard trim using clippers or shears to shape and maintain your facial hair.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-header">
+                        <h3 class="service-name">Full Shave w/Razor</h3>
+                        <span class="service-price">$70</span>
+                    </div>
+                    <p class="service-duration">60 minutes • Old School Experience</p>
+                    <p class="service-description">The ultimate traditional experience. Pre-shave oils, hot towels, and a complete straight razor shave.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-header">
+                        <h3 class="service-name">Nose Wax</h3>
+                        <span class="service-price">$9</span>
+                    </div>
+                    <p class="service-duration">5 minutes • Quick & Clean</p>
+                    <p class="service-description">Professional nose hair removal. Quick, efficient, and part of the complete grooming experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <h2>Master of the Craft</h2>
+                    <p>
+                        Richard "Ricky" Wharton isn't just cutting hair—he's crafting experiences. After years perfecting 
+                        his skills at Dennison Dahlman, Ricky opened his own single-chair shop where every client gets 
+                        his undivided attention.
+                    </p>
+                    <p>
+                        This isn't a factory. It's a sanctuary where traditional barbering meets modern precision. 
+                        Where straight razors still matter and hot towels aren't just tradition—they're ritual.
+                    </p>
+                    <p>
+                        Clients like Shea have been coming for over 5 years, following Ricky wherever he goes. 
+                        That's the kind of loyalty only a true craftsman earns.
+                    </p>
+                    
+                    <div class="about-highlights">
+                        <div class="highlight">
+                            <div class="highlight-icon"></div>
+                            <span class="highlight-text">Single Chair Experience</span>
+                        </div>
+                        <div class="highlight">
+                            <div class="highlight-icon"></div>
+                            <span class="highlight-text">Straight Razor Specialist</span>
+                        </div>
+                        <div class="highlight">
+                            <div class="highlight-icon"></div>
+                            <span class="highlight-text">Hot Towel Service</span>
+                        </div>
+                        <div class="highlight">
+                            <div class="highlight-icon"></div>
+                            <span class="highlight-text">5+ Years of Loyal Clients</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image fade-in">
+                    <img src="https://placehold.co/500x450/E07A5F/ffffff?text=Traditional+Tools" alt="Traditional barbering tools and setup at Wharton Barbershop">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">What Clients Say</h2>
+                <p class="section-subtitle">
+                    Real reviews from real people who trust Ricky with their look. 
+                    23 five-star reviews and counting.
+                </p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial fade-in">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">Absolutely the best barber experience I've had. One on one, calm, peaceful and top notch quality! I won't let anyone else trim my beard. Single chair shop, down to earth and professional.</p>
+                    <p class="testimonial-author">— Colt Willis</p>
+                </div>
+                
+                <div class="testimonial fade-in">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">If you're looking for a top-tier barber who takes pride in every cut, Ricky is your guy. I've been going to him for over 5 years and every visit is a perfect fade with a detailed straight razor finish.</p>
+                    <p class="testimonial-author">— Shea</p>
+                </div>
+                
+                <div class="testimonial fade-in">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">Very meticulous with his craft and a great vibe in his shop. Was very impressed and can tell he takes pride in his work. Definitely recommend!</p>
+                    <p class="testimonial-author">— Tyrell Muller</p>
+                </div>
+                
+                <div class="testimonial fade-in">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">Ricky provides not only excellent services, but fantastic place to experience them. Small lowkey shop that's just the right environment. Always leave feeling and looking my best!</p>
+                    <p class="testimonial-author">— TJ Griggs</p>
+                </div>
+                
+                <div class="testimonial fade-in">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">You can tell he takes great pride in his work. Only been there twice, but I found my barber.</p>
+                    <p class="testimonial-author">— Ed Mello</p>
+                </div>
+                
+                <div class="testimonial fade-in">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">Best place we have found! Husband & two boys ages 3 & 6. Simply amazing. 10/10</p>
+                    <p class="testimonial-author">— Katie Green</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Visit the Shop</h2>
+                <p class="section-subtitle">
+                    Book your appointment and experience what a single-chair shop can offer. 
+                    This is barbering the way it was meant to be.
+                </p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info fade-in">
+                    <h3>Wharton Barbershop</h3>
+                    <div class="contact-details">
+                        <p><strong>Address:</strong><br>11710 Stonegate Cir<br>Omaha, NE 68164</p>
+                        <p><strong>Phone:</strong><br>(402) 819-8821</p>
+                        <p><strong>Master Barber:</strong><br>Richard "Ricky" Wharton</p>
+                        <p><strong>Instagram:</strong><br>@rckwharton</p>
+                    </div>
+                    
+                    <div class="hours">
+                        <h4>Shop Hours</h4>
+                        <div class="hours-grid">
+                            <div class="hours-item">
+                                <span>Monday</span>
+                                <span>Closed</span>
+                            </div>
+                            <div class="hours-item">
+                                <span>Tuesday</span>
+                                <span>12pm - 7pm</span>
+                            </div>
+                            <div class="hours-item">
+                                <span>Wednesday</span>
+                                <span>12pm - 7pm</span>
+                            </div>
+                            <div class="hours-item">
+                                <span>Thursday</span>
+                                <span>12pm - 7pm</span>
+                            </div>
+                            <div class="hours-item">
+                                <span>Friday</span>
+                                <span>12pm - 7pm</span>
+                            </div>
+                            <div class="hours-item">
+                                <span>Saturday</span>
+                                <span>10am - 5pm</span>
+                            </div>
+                            <div class="hours-item">
+                                <span>Sunday</span>
+                                <span>Closed</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="https://wharton-barber-shop.square.site/" class="btn" target="_blank" style="margin-top: 30px;">Book on Square</a>
+                </div>
+                
+                <div class="map-placeholder fade-in">
+                    <h4>11710 Stonegate Circle</h4>
+                    <p>Omaha, Nebraska 68164</p>
+                    <p style="margin-top: 20px; font-size: 14px;">Interactive map integration coming soon</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Wharton Barbershop. Master barber Richard "Ricky" Wharton. Omaha, Nebraska. 
+            | Follow us: <a href="https://www.instagram.com/rckwharton/" target="_blank">@rckwharton</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(253, 252, 250, 0.98)';
+                header.style.boxShadow = '0 2px 30px rgba(27, 54, 93, 0.1)';
+            } else {
+                header.style.background = 'rgba(253, 252, 250, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenu.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '100%';
+                navLinks.style.left = '0';
+                navLinks.style.right = '0';
+                navLinks.style.backgroundColor = 'white';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.padding = '20px';
+                navLinks.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinks.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
