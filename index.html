@@ -656,6 +656,7 @@
             gap: 30px;
             position: relative;
             z-index: 10;
+            padding-top: 25px; /* Space for badge on desktop */
         }
         
         .service-mechanism {
@@ -666,6 +667,7 @@
             position: relative;
             overflow: hidden;
             transition: var(--transition-smooth);
+            margin-top: 20px; /* Space for badge on desktop */
         }
         
         .service-mechanism::before {
@@ -740,6 +742,7 @@
             color: var(--iron-black);
             transform: scale(1.03);
             position: relative;
+            overflow: visible; /* Ensure badge shows on desktop */
         }
         
         .signature-mechanism .mechanism-title {
@@ -753,7 +756,7 @@
         
         .signature-seal {
             position: absolute;
-            top: -15px;
+            top: -12px;
             right: 24px;
             background: var(--iron-black);
             color: var(--tarnished-gold);
@@ -765,6 +768,9 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             border: 1px solid var(--weathered-copper);
+            white-space: nowrap;
+            z-index: 20;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
         }
         
         /* Testimonials */
@@ -1160,23 +1166,10 @@
             }
             
             .signature-seal {
-                top: -8px;
-                right: 12px;
-                padding: 6px 12px;
+                top: -10px;
+                right: 16px;
+                padding: 6px 14px;
                 font-size: 9px;
-                white-space: nowrap;
-                z-index: 10;
-            }
-            
-            /* Ensure service mechanism container doesn't cut off badge */
-            .service-mechanism {
-                overflow: visible !important;
-                margin-top: 16px;
-            }
-            
-            .signature-mechanism {
-                overflow: visible !important;
-                margin-top: 16px;
             }
             
             /* Testimonials mobile */
