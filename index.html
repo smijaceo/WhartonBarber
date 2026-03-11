@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wharton Steam Works | Master Engineer Richard Wharton | Precision Barbering Apparatus</title>
+    <title>Wharton Barbershop | Master Barber Richard Wharton | Omaha, NE</title>
     
-    <meta name="description" content="Step into Master Engineer Richard Wharton's precision barbering workshop. Victorian craftsmanship meets mechanical excellence in Omaha's only steam-powered grooming establishment.">
+    <meta name="description" content="Wharton Barbershop - Where master barber Richard Wharton delivers precision cuts with Victorian craftsmanship. Single chair experience in Omaha, NE.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -20,55 +20,40 @@
         }
         
         :root {
-            /* Steampunk Color Palette */
+            /* Steampunk-Inspired Palette */
             --brass: #D4AF37;
             --copper: #B87333;
             --bronze: #8B4513;
-            --steam: #F5F3E7;
-            --iron: #2C1810;
-            --coal: #1A0F08;
-            --rust: #A0522D;
-            --patina: #7D8471;
+            --warm-cream: #F5F2E8;
+            --rich-brown: #3D2A1E;
+            --dark-brown: #2C1810;
+            --steam-white: #FEFCF8;
             
             /* Typography */
             --ornate: 'Cinzel', serif;
             --readable: 'Crimson Text', serif;
             
             /* Effects */
-            --gear-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
-            --steam-shadow: 0 8px 32px rgba(28, 24, 16, 0.4);
-            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            
-            /* Animations */
-            --gear-spin: gear-rotation 20s linear infinite;
-            --steam-rise: steam-animation 6s ease-in-out infinite;
+            --warm-shadow: 0 4px 20px rgba(139, 69, 19, 0.2);
+            --brass-glow: 0 0 20px rgba(212, 175, 55, 0.3);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
-        @keyframes gear-rotation {
+        @keyframes gear-turn {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
         
-        @keyframes steam-animation {
-            0% { opacity: 0.3; transform: translateY(0) scale(1); }
-            50% { opacity: 0.7; transform: translateY(-20px) scale(1.1); }
-            100% { opacity: 0; transform: translateY(-40px) scale(1.2); }
-        }
-        
-        @keyframes brass-glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
-            50% { box-shadow: 0 0 40px rgba(212, 175, 55, 0.6); }
+        @keyframes brass-shimmer {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
         }
         
         body {
             font-family: var(--readable);
             line-height: 1.6;
-            color: var(--steam);
-            background: 
-                radial-gradient(circle at 25% 25%, rgba(184, 115, 51, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, rgba(139, 69, 19, 0.1) 0%, transparent 50%),
-                linear-gradient(135deg, var(--coal) 0%, var(--iron) 100%);
-            background-attachment: fixed;
+            color: var(--rich-brown);
+            background: var(--steam-white);
             overflow-x: hidden;
         }
         
@@ -78,116 +63,92 @@
             padding: 0 24px;
         }
         
-        /* Steampunk UI Elements */
-        .brass-frame {
-            border: 3px solid var(--brass);
-            border-radius: 8px;
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, transparent 100%);
-            position: relative;
+        /* Steampunk Accent Elements */
+        .brass-accent {
+            color: var(--brass);
         }
         
-        .brass-frame::before,
-        .brass-frame::after {
-            content: '';
-            position: absolute;
-            width: 12px;
-            height: 12px;
+        .gear-icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
             border: 2px solid var(--brass);
-            background: var(--iron);
-        }
-        
-        .brass-frame::before {
-            top: -3px;
-            left: -3px;
-            border-radius: 50% 0 0 0;
-        }
-        
-        .brass-frame::after {
-            bottom: -3px;
-            right: -3px;
-            border-radius: 0 0 50% 0;
-        }
-        
-        .gear {
-            width: 40px;
-            height: 40px;
-            border: 4px solid var(--brass);
             border-radius: 50%;
             position: relative;
-            animation: var(--gear-spin);
-            background: radial-gradient(circle, var(--iron) 0%, var(--coal) 100%);
+            margin: 0 8px;
         }
         
-        .gear::before {
-            content: '';
+        .gear-icon::before {
+            content: '⚙';
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            font-size: 12px;
+            color: var(--brass);
+            animation: gear-turn 10s linear infinite;
+        }
+        
+        .brass-border {
+            border: 2px solid var(--brass);
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .brass-border::before,
+        .brass-border::after {
+            content: '';
+            position: absolute;
             width: 8px;
             height: 8px;
             background: var(--brass);
             border-radius: 50%;
         }
         
-        .gear::after {
-            content: '⚙';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: var(--brass);
-            font-size: 20px;
-            line-height: 1;
+        .brass-border::before {
+            top: -4px;
+            left: -4px;
         }
         
-        .steam-particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: var(--steam);
-            border-radius: 50%;
-            animation: var(--steam-rise);
-            opacity: 0.3;
+        .brass-border::after {
+            bottom: -4px;
+            right: -4px;
         }
         
-        .btn-apparatus {
+        .btn {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
+            gap: 8px;
             padding: 16px 32px;
             background: linear-gradient(135deg, var(--brass) 0%, var(--copper) 100%);
-            color: var(--iron);
+            color: var(--dark-brown);
             text-decoration: none;
             font-family: var(--ornate);
             font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            border-radius: 4px;
-            border: 2px solid var(--brass);
-            box-shadow: var(--steam-shadow);
+            border-radius: 6px;
+            box-shadow: var(--warm-shadow);
             transition: var(--transition);
             position: relative;
             overflow: hidden;
         }
         
-        .btn-apparatus::before {
+        .btn::before {
             content: '';
             position: absolute;
             top: 0;
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
             transition: left 0.6s ease;
         }
         
-        .btn-apparatus:hover {
-            transform: translateY(-3px);
-            animation: brass-glow 2s ease-in-out infinite;
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--brass-glow);
         }
         
-        .btn-apparatus:hover::before {
+        .btn:hover::before {
             left: 100%;
         }
         
@@ -196,11 +157,10 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: linear-gradient(to bottom, var(--iron) 0%, rgba(28, 24, 16, 0.95) 100%);
+            background: rgba(254, 252, 248, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            border-bottom: 2px solid var(--brass);
-            box-shadow: var(--steam-shadow);
+            border-bottom: 1px solid var(--brass);
         }
         
         .nav {
@@ -210,23 +170,15 @@
             padding: 20px 0;
         }
         
-        .workshop-logo {
+        .logo {
             font-family: var(--ornate);
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--brass);
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--dark-brown);
             text-decoration: none;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-            position: relative;
             display: flex;
             align-items: center;
-            gap: 12px;
-        }
-        
-        .workshop-logo .gear {
-            width: 24px;
-            height: 24px;
-            border-width: 2px;
+            gap: 8px;
         }
         
         .nav-links {
@@ -236,18 +188,14 @@
         }
         
         .nav-links a {
-            color: var(--steam);
+            color: var(--rich-brown);
             text-decoration: none;
-            font-family: var(--ornate);
-            font-size: 14px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-weight: 500;
             transition: var(--transition);
             position: relative;
         }
         
-        .nav-links a::before {
+        .nav-links a::after {
             content: '';
             position: absolute;
             bottom: -4px;
@@ -260,614 +208,522 @@
         
         .nav-links a:hover {
             color: var(--brass);
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
         }
         
-        .nav-links a:hover::before {
+        .nav-links a:hover::after {
             width: 100%;
         }
         
-        /* Hero Workshop */
-        .hero-workshop {
+        /* Hero */
+        .hero {
             padding: 140px 0 80px;
+            background: linear-gradient(135deg, var(--warm-cream) 0%, var(--steam-white) 100%);
             position: relative;
-            overflow: hidden;
-            background: linear-gradient(135deg, var(--coal) 0%, var(--iron) 50%, var(--bronze) 100%);
         }
         
-        .hero-workshop::before {
+        .hero::before {
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
             right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><circle cx="50" cy="50" r="30" fill="none" stroke="%23D4AF37" stroke-width="0.5" opacity="0.1"/><circle cx="20" cy="20" r="10" fill="none" stroke="%23B87333" stroke-width="0.5" opacity="0.1"/><circle cx="80" cy="80" r="15" fill="none" stroke="%238B4513" stroke-width="0.5" opacity="0.1"/></svg>');
-            opacity: 0.3;
-        }
-        
-        .steam-effects {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
+            width: 30%;
             height: 100%;
-            pointer-events: none;
-            overflow: hidden;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="30" fill="none" stroke="%23D4AF37" stroke-width="0.5" opacity="0.1"/></svg>');
+            opacity: 0.5;
         }
         
-        .workshop-content {
+        .hero-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.2fr 1fr;
             gap: 80px;
             align-items: center;
             position: relative;
             z-index: 10;
         }
         
-        .workshop-proclamation {
-            max-width: 600px;
-        }
-        
-        .workshop-badge {
+        .hero-badge {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            padding: 10px 20px;
-            background: rgba(212, 175, 55, 0.2);
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(212, 175, 55, 0.1);
             border: 1px solid var(--brass);
-            border-radius: 25px;
+            border-radius: 20px;
             color: var(--brass);
             font-family: var(--ornate);
             font-size: 12px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 32px;
-        }
-        
-        .workshop-title {
-            font-family: var(--ornate);
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            font-weight: 700;
-            line-height: 1.1;
             margin-bottom: 24px;
-            background: linear-gradient(135deg, var(--brass) 0%, var(--copper) 50%, var(--brass) 100%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
         
-        .workshop-description {
+        .hero-title {
+            font-family: var(--ornate);
+            font-size: clamp(2.5rem, 5vw, 3.8rem);
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: var(--dark-brown);
+        }
+        
+        .hero-subtitle {
+            font-size: 20px;
+            color: var(--brass);
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .hero-description {
             font-size: 18px;
             line-height: 1.7;
-            margin-bottom: 40px;
-            color: var(--steam);
+            margin-bottom: 32px;
             opacity: 0.9;
+            max-width: 500px;
         }
         
-        .workshop-metrics {
+        .hero-stats {
             display: flex;
             gap: 40px;
             margin: 40px 0;
         }
         
-        .metric-gauge {
+        .stat {
             text-align: center;
-            position: relative;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+            border: 1px solid var(--brass);
+            min-width: 100px;
         }
         
-        .metric-gauge::before {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 2px;
-            background: linear-gradient(90deg, var(--brass), var(--copper));
-        }
-        
-        .metric-reading {
+        .stat-number {
             display: block;
             font-family: var(--ornate);
-            font-size: 32px;
-            font-weight: 700;
+            font-size: 28px;
+            font-weight: 600;
             color: var(--brass);
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
         
-        .metric-label {
-            font-family: var(--ornate);
-            font-size: 11px;
+        .stat-label {
+            font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: var(--copper);
+            opacity: 0.8;
             margin-top: 4px;
         }
         
-        .apparatus-display {
+        .hero-image {
             position: relative;
-            padding: 30px;
+            padding: 20px;
         }
         
-        .apparatus-frame {
-            position: relative;
-            border: 4px solid var(--brass);
-            border-radius: 12px;
-            background: linear-gradient(135deg, rgba(184, 115, 51, 0.1) 0%, transparent 50%, rgba(212, 175, 55, 0.1) 100%);
-            padding: 8px;
-        }
-        
-        .apparatus-image {
+        .hero-image img {
             width: 100%;
-            height: 500px;
+            height: 450px;
             object-fit: cover;
             border-radius: 8px;
-            filter: sepia(20%) contrast(1.1) brightness(0.9);
+            filter: sepia(10%) contrast(1.05);
         }
         
-        .precision-badge {
+        .testimonial-float {
             position: absolute;
             bottom: -20px;
             left: -20px;
-            background: linear-gradient(135deg, var(--iron) 0%, var(--coal) 100%);
-            border: 3px solid var(--brass);
-            border-radius: 8px;
+            background: var(--steam-white);
             padding: 20px;
-            max-width: 280px;
-            box-shadow: var(--steam-shadow);
+            border-radius: 8px;
+            border: 2px solid var(--brass);
+            max-width: 260px;
+            box-shadow: var(--warm-shadow);
         }
         
-        .precision-stars {
+        .testimonial-stars {
             color: var(--brass);
             font-size: 16px;
             margin-bottom: 8px;
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
         }
         
-        .precision-badge p {
-            margin: 6px 0;
+        .testimonial-float p {
             font-size: 14px;
-            line-height: 1.5;
+            margin: 6px 0;
         }
         
-        .precision-badge .engineer {
+        .testimonial-author {
             color: var(--brass);
-            font-family: var(--ornate);
             font-weight: 600;
         }
         
-        /* Workshop Philosophy */
-        .philosophy {
+        /* About */
+        .about {
             padding: 100px 0;
-            background: linear-gradient(135deg, var(--bronze) 0%, var(--iron) 50%, var(--coal) 100%);
-            position: relative;
+            background: var(--rich-brown);
+            color: var(--steam-white);
         }
         
-        .philosophy::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><rect width="200" height="200" fill="none"/><path d="M100 50 L150 100 L100 150 L50 100 Z" fill="none" stroke="%23D4AF37" stroke-width="1" opacity="0.05"/></svg>');
-        }
-        
-        .philosophy-content {
+        .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 80px;
             align-items: center;
-            position: relative;
-            z-index: 10;
         }
         
-        .philosophy-text h2 {
+        .about-text h2 {
             font-family: var(--ornate);
             font-size: 36px;
-            font-weight: 700;
+            font-weight: 600;
             color: var(--brass);
             margin-bottom: 32px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
         
-        .philosophy-text p {
+        .about-text p {
             margin-bottom: 24px;
             font-size: 16px;
             line-height: 1.7;
             opacity: 0.9;
         }
         
-        .engineering-principles {
+        .craftsmanship-points {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 16px;
             margin-top: 32px;
         }
         
-        .principle {
+        .craft-point {
             display: flex;
             align-items: center;
             gap: 12px;
-            padding: 16px;
+            padding: 12px;
             background: rgba(212, 175, 55, 0.1);
             border: 1px solid var(--brass);
-            border-radius: 8px;
-            transition: var(--transition);
+            border-radius: 6px;
         }
         
-        .principle:hover {
-            background: rgba(212, 175, 55, 0.2);
-            transform: translateY(-2px);
-        }
-        
-        .principle-icon {
-            width: 8px;
-            height: 8px;
+        .craft-icon {
+            width: 6px;
+            height: 6px;
             background: var(--brass);
             border-radius: 50%;
-            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
         }
         
-        .principle-text {
-            font-family: var(--ornate);
+        .craft-text {
             font-size: 14px;
-            font-weight: 600;
+            font-weight: 500;
         }
         
-        .apparatus-blueprint {
-            position: relative;
-        }
-        
-        .blueprint-image {
+        .about-image img {
             width: 100%;
             height: 400px;
             object-fit: cover;
             border-radius: 8px;
-            border: 3px solid var(--brass);
-            filter: sepia(30%) contrast(1.2) brightness(0.8);
+            border: 2px solid var(--brass);
+            filter: sepia(20%) contrast(1.1);
         }
         
-        /* Service Apparatus */
-        .service-apparatus {
+        /* Services */
+        .services {
             padding: 100px 0;
-            background: linear-gradient(135deg, var(--iron) 0%, var(--bronze) 100%);
+            background: var(--warm-cream);
         }
         
-        .apparatus-header {
+        .services-header {
             text-align: center;
-            margin-bottom: 80px;
+            margin-bottom: 60px;
         }
         
-        .apparatus-header h2 {
+        .services-header h2 {
             font-family: var(--ornate);
-            font-size: 42px;
-            font-weight: 700;
-            color: var(--brass);
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            font-size: 36px;
+            font-weight: 600;
+            color: var(--dark-brown);
+            margin-bottom: 16px;
         }
         
-        .apparatus-header p {
+        .services-header p {
             font-size: 18px;
-            opacity: 0.9;
+            opacity: 0.8;
             max-width: 600px;
             margin: 0 auto;
         }
         
-        .apparatus-grid {
+        .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
+            gap: 24px;
         }
         
-        .service-mechanism {
-            background: linear-gradient(135deg, var(--coal) 0%, var(--iron) 100%);
-            border: 2px solid var(--brass);
-            border-radius: 12px;
+        .service-card {
+            background: var(--steam-white);
             padding: 32px;
-            position: relative;
-            overflow: hidden;
+            border-radius: 8px;
+            border: 1px solid var(--brass);
             transition: var(--transition);
+            position: relative;
         }
         
-        .service-mechanism::before {
+        .service-card::before {
             content: '';
             position: absolute;
             top: 0;
-            left: -100%;
-            width: 100%;
+            left: 0;
+            width: 4px;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
-            transition: left 0.6s ease;
+            background: var(--brass);
+            border-radius: 8px 0 0 8px;
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
         }
         
-        .service-mechanism:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--gear-shadow);
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--warm-shadow);
         }
         
-        .service-mechanism:hover::before {
-            left: 100%;
+        .service-card:hover::before {
+            transform: scaleY(1);
         }
         
-        .mechanism-header {
+        .service-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 20px;
-        }
-        
-        .mechanism-name {
-            font-family: var(--ornate);
-            font-size: 20px;
-            font-weight: 600;
-            color: var(--brass);
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-        }
-        
-        .mechanism-cost {
-            font-family: var(--ornate);
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--copper);
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-        }
-        
-        .mechanism-duration {
-            color: var(--brass);
-            font-family: var(--ornate);
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
             margin-bottom: 16px;
         }
         
-        .mechanism-description {
+        .service-name {
+            font-family: var(--ornate);
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--dark-brown);
+        }
+        
+        .service-price {
+            font-family: var(--ornate);
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--brass);
+        }
+        
+        .service-duration {
+            color: var(--copper);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .service-description {
             font-size: 15px;
             line-height: 1.6;
-            opacity: 0.9;
-        }
-        
-        .signature-apparatus {
-            background: linear-gradient(135deg, var(--brass) 0%, var(--copper) 100%);
-            color: var(--iron);
-            position: relative;
-            transform: scale(1.02);
-        }
-        
-        .signature-apparatus .mechanism-name {
-            color: var(--iron);
-        }
-        
-        .signature-apparatus .mechanism-description {
-            color: var(--coal);
             opacity: 0.8;
         }
         
-        .signature-badge {
+        .featured-service {
+            background: var(--dark-brown);
+            color: var(--steam-white);
+            transform: scale(1.02);
+            position: relative;
+        }
+        
+        .featured-service .service-name {
+            color: var(--steam-white);
+        }
+        
+        .featured-service .service-description {
+            opacity: 0.9;
+        }
+        
+        .featured-badge {
             position: absolute;
             top: -12px;
             right: 20px;
-            background: var(--iron);
-            color: var(--brass);
-            padding: 8px 16px;
-            border-radius: 20px;
+            background: var(--brass);
+            color: var(--dark-brown);
+            padding: 6px 16px;
+            border-radius: 12px;
             font-family: var(--ornate);
             font-size: 10px;
-            font-weight: 700;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
         
-        /* Client Testimonials */
-        .testimonials {
+        /* Reviews */
+        .reviews {
             padding: 100px 0;
-            background: var(--coal);
+            background: var(--steam-white);
         }
         
-        .testimonials-header {
+        .reviews-header {
             text-align: center;
-            margin-bottom: 80px;
+            margin-bottom: 60px;
         }
         
-        .testimonials-header h2 {
+        .reviews-header h2 {
             font-family: var(--ornate);
-            font-size: 42px;
-            font-weight: 700;
-            color: var(--brass);
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            font-size: 36px;
+            font-weight: 600;
+            color: var(--dark-brown);
+            margin-bottom: 16px;
         }
         
-        .testimonials-grid {
+        .reviews-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 24px;
         }
         
-        .client-testimony {
-            background: linear-gradient(135deg, var(--iron) 0%, var(--coal) 100%);
+        .review-card {
+            background: var(--warm-cream);
+            padding: 24px;
+            border-radius: 8px;
             border: 1px solid var(--brass);
-            border-radius: 12px;
-            padding: 28px;
-            position: relative;
             transition: var(--transition);
+            position: relative;
         }
         
-        .client-testimony::before {
+        .review-card::before {
             content: '"';
             position: absolute;
-            top: -10px;
-            left: 20px;
+            top: -8px;
+            left: 16px;
             font-family: var(--ornate);
-            font-size: 60px;
+            font-size: 48px;
             color: var(--brass);
             opacity: 0.3;
         }
         
-        .client-testimony:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--steam-shadow);
+        .review-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--warm-shadow);
         }
         
-        .testimony-stars {
+        .review-stars {
             color: var(--brass);
-            font-size: 16px;
-            margin-bottom: 16px;
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+            margin-bottom: 12px;
         }
         
-        .testimony-text {
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 20px;
+        .review-text {
             font-style: italic;
-            padding-left: 20px;
+            margin-bottom: 16px;
+            line-height: 1.6;
+            padding-left: 16px;
         }
         
-        .testimony-client {
-            font-family: var(--ornate);
-            color: var(--brass);
+        .review-author {
             font-weight: 600;
-            padding-left: 20px;
+            color: var(--brass);
+            padding-left: 16px;
         }
         
-        /* Workshop Contact */
-        .workshop-contact {
+        /* Contact */
+        .contact {
             padding: 100px 0;
-            background: linear-gradient(135deg, var(--bronze) 0%, var(--iron) 50%, var(--coal) 100%);
+            background: var(--dark-brown);
+            color: var(--steam-white);
         }
         
         .contact-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: start;
+            gap: 60px;
         }
         
-        .contact-proclamation h2 {
+        .contact-info h2 {
             font-family: var(--ornate);
             font-size: 36px;
-            font-weight: 700;
+            font-weight: 600;
             color: var(--brass);
             margin-bottom: 32px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
         
-        .workshop-details {
+        .contact-details {
             margin-bottom: 32px;
         }
         
-        .detail-mechanism {
+        .contact-item {
             display: flex;
             align-items: center;
             gap: 16px;
-            margin-bottom: 20px;
-            padding: 16px;
+            margin-bottom: 16px;
+            padding: 12px;
             background: rgba(212, 175, 55, 0.1);
+            border-radius: 6px;
             border: 1px solid var(--brass);
-            border-radius: 8px;
-            transition: var(--transition);
         }
         
-        .detail-mechanism:hover {
-            background: rgba(212, 175, 55, 0.2);
-            transform: translateY(-2px);
-        }
-        
-        .detail-icon {
-            width: 24px;
-            height: 24px;
+        .contact-icon {
             color: var(--brass);
             font-size: 18px;
         }
         
-        .detail-info strong {
+        .contact-item strong {
             color: var(--brass);
             font-family: var(--ornate);
             display: block;
             margin-bottom: 4px;
         }
         
-        .operating-schedule {
-            background: linear-gradient(135deg, var(--iron) 0%, var(--coal) 100%);
+        .hours-display {
+            background: var(--rich-brown);
+            padding: 24px;
+            border-radius: 8px;
             border: 2px solid var(--brass);
-            border-radius: 12px;
-            padding: 32px;
         }
         
-        .operating-schedule h3 {
+        .hours-display h3 {
             color: var(--brass);
-            margin-bottom: 24px;
+            margin-bottom: 16px;
             font-family: var(--ornate);
-            font-size: 20px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
         }
         
-        .schedule-item {
+        .hours-item {
             display: flex;
             justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
         }
         
-        .schedule-item:last-child {
+        .hours-item:last-child {
             border-bottom: none;
         }
         
-        .schedule-day {
-            font-family: var(--ornate);
-            font-weight: 600;
-        }
-        
-        .schedule-hours {
-            color: var(--copper);
-        }
-        
         /* Footer */
-        .workshop-footer {
-            background: var(--coal);
-            padding: 60px 0 40px;
-            border-top: 2px solid var(--brass);
+        .footer {
+            background: var(--dark-brown);
+            padding: 40px 0;
+            border-top: 1px solid var(--brass);
             text-align: center;
-        }
-        
-        .workshop-footer p {
-            font-family: var(--ornate);
-            color: var(--steam);
-            opacity: 0.8;
+            color: var(--steam-white);
         }
         
         /* Responsive */
         @media (max-width: 768px) {
-            .workshop-content,
-            .philosophy-content,
+            .hero-content,
+            .about-content,
             .contact-content {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
             
-            .workshop-metrics {
+            .hero-stats {
                 justify-content: center;
-                gap: 24px;
+                gap: 20px;
             }
             
-            .apparatus-grid {
+            .services-grid {
                 grid-template-columns: 1fr;
             }
             
-            .engineering-principles {
+            .craftsmanship-points {
                 grid-template-columns: 1fr;
             }
             
-            .precision-badge {
+            .testimonial-float {
                 position: static;
-                margin-top: 24px;
+                margin-top: 20px;
             }
             
             .nav-links {
@@ -876,13 +732,13 @@
         }
         
         /* Reveal Animation */
-        .reveal {
+        .fade-in {
             opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateY(30px);
+            transition: all 0.8s ease;
         }
         
-        .reveal.visible {
+        .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
@@ -893,367 +749,357 @@
     <header class="header">
         <div class="container">
             <nav class="nav">
-                <a href="#" class="workshop-logo">
-                    <div class="gear"></div>
-                    <span>WHARTON STEAM WORKS</span>
+                <a href="#" class="logo">
+                    <span class="gear-icon"></span>
+                    <span>Wharton Barbershop</span>
                 </a>
                 <ul class="nav-links">
-                    <li><a href="#philosophy">Philosophy</a></li>
-                    <li><a href="#apparatus">Apparatus</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Workshop</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Workshop -->
-    <section class="hero-workshop">
-        <div class="steam-effects">
-            <div class="steam-particle" style="left: 20%; animation-delay: 0s;"></div>
-            <div class="steam-particle" style="left: 40%; animation-delay: 2s;"></div>
-            <div class="steam-particle" style="left: 60%; animation-delay: 4s;"></div>
-            <div class="steam-particle" style="left: 80%; animation-delay: 1s;"></div>
-        </div>
-        
+    <!-- Hero -->
+    <section class="hero">
         <div class="container">
-            <div class="workshop-content reveal">
-                <div class="workshop-proclamation">
-                    <div class="workshop-badge">
-                        <div class="gear" style="width: 16px; height: 16px; border-width: 2px;"></div>
-                        <span>Master Engineer's Workshop</span>
+            <div class="hero-content fade-in">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <span class="gear-icon"></span>
+                        <span>Master Craftsman • Single Chair</span>
                     </div>
                     
-                    <h1 class="workshop-title">Where Steam Meets Steel</h1>
+                    <h1 class="hero-title">Precision. Passion. Personal.</h1>
                     
-                    <p class="workshop-description">
-                        Master Engineer Richard "Ricky" Wharton operates Omaha's only precision barbering apparatus. 
-                        In his Victorian workshop, every cut is engineered with mechanical excellence, 
-                        every shave delivered with steam-powered perfection.
+                    <p class="hero-subtitle">Where Victorian craftsmanship meets modern barbering</p>
+                    
+                    <p class="hero-description">
+                        Master barber Richard "Ricky" Wharton delivers meticulous cuts, expert fades, 
+                        and traditional straight razor shaves in his single-chair shop. 
+                        Every detail matters, every client gets undivided attention.
                     </p>
                     
-                    <div class="workshop-metrics">
-                        <div class="metric-gauge">
-                            <span class="metric-reading">5.0</span>
-                            <div class="metric-label">Precision Rating</div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">5.0</span>
+                            <div class="stat-label">Perfect Rating</div>
                         </div>
-                        <div class="metric-gauge">
-                            <span class="metric-reading">23</span>
-                            <div class="metric-label">Master Reviews</div>
+                        <div class="stat">
+                            <span class="stat-number">23</span>
+                            <div class="stat-label">Five-Star Reviews</div>
                         </div>
-                        <div class="metric-gauge">
-                            <span class="metric-reading">1</span>
-                            <div class="metric-label">Steam Engine</div>
+                        <div class="stat">
+                            <span class="stat-number">1</span>
+                            <div class="stat-label">Chair Experience</div>
                         </div>
                     </div>
                     
-                    <a href="https://wharton-barber-shop.square.site/" class="btn-apparatus" target="_blank">
-                        <span>Reserve Your Session</span>
-                        <div class="gear" style="width: 16px; height: 16px; border-width: 2px;"></div>
+                    <a href="https://wharton-barber-shop.square.site/" class="btn" target="_blank">
+                        <span>Book Your Appointment</span>
+                        <span class="gear-icon"></span>
                     </a>
                 </div>
                 
-                <div class="apparatus-display">
-                    <div class="apparatus-frame">
-                        <img src="https://placehold.co/500x500/2C1810/D4AF37?text=Master+Engineer+at+Steam+Apparatus" alt="Master Engineer Richard Wharton operating precision barbering machinery" class="apparatus-image">
-                    </div>
+                <div class="hero-image brass-border">
+                    <img src="https://placehold.co/500x450/8B4513/D4AF37?text=Master+Barber+at+Work" alt="Master barber Richard Ricky Wharton at work">
                     
-                    <div class="precision-badge">
-                        <div class="precision-stars">★★★★★</div>
-                        <p><strong>23 Perfect Calibrations</strong></p>
+                    <div class="testimonial-float">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p><strong>23 Perfect Reviews</strong></p>
                         <p>"Very meticulous with his craft and a great vibe in his shop. Can tell he takes pride in his work."</p>
-                        <p class="engineer">— Tyrell, Master Engineer</p>
+                        <p class="testimonial-author">— Tyrell M.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Workshop Philosophy -->
-    <section id="philosophy" class="philosophy">
+    <!-- About -->
+    <section id="about" class="about">
         <div class="container">
-            <div class="philosophy-content reveal">
-                <div class="philosophy-text">
-                    <h2>Engineering Excellence</h2>
+            <div class="about-content fade-in">
+                <div class="about-text">
+                    <h2>The Craftsman's Story</h2>
                     <p>
-                        Master Engineer Ricky abandoned the industrial complexes of corporate machinery 
-                        to build something extraordinary: Omaha's first single-chair precision barbering apparatus.
+                        Richard "Ricky" Wharton didn't just open another barbershop. 
+                        After years perfecting his craft at Dennison Dahlman, he created something special: 
+                        a single-chair experience where quality trumps quantity.
                     </p>
                     <p>
-                        After years calibrating his techniques at Dennison Dahlman Engineering Works, 
-                        he constructed his own workshop where Victorian craftsmanship meets mechanical innovation.
+                        Inspired by Victorian-era craftsmanship and traditional barbering techniques, 
+                        Ricky combines old-school attention to detail with modern precision. 
+                        Every cut includes his signature straight razor finishing.
                     </p>
                     <p>
-                        Each client experiences the pinnacle of barbering engineering—one chair, 
-                        undivided attention, and the kind of precision that only comes from 
-                        a master craftsman's dedicated workshop.
+                        The result? A loyal following of clients who understand the difference 
+                        between getting a haircut and experiencing true craftsmanship. 
+                        Some, like Shea, have been coming for over 5 years.
                     </p>
                     
-                    <div class="engineering-principles">
-                        <div class="principle">
-                            <div class="principle-icon"></div>
-                            <span class="principle-text">Single Engine Operation</span>
+                    <div class="craftsmanship-points">
+                        <div class="craft-point">
+                            <div class="craft-icon"></div>
+                            <span class="craft-text">Single Chair Focus</span>
                         </div>
-                        <div class="principle">
-                            <div class="principle-icon"></div>
-                            <span class="principle-text">Steam-Powered Precision</span>
+                        <div class="craft-point">
+                            <div class="craft-icon"></div>
+                            <span class="craft-text">Traditional Techniques</span>
                         </div>
-                        <div class="principle">
-                            <div class="principle-icon"></div>
-                            <span class="principle-text">Hot Apparatus Service</span>
+                        <div class="craft-point">
+                            <div class="craft-icon"></div>
+                            <span class="craft-text">Straight Razor Finishing</span>
                         </div>
-                        <div class="principle">
-                            <div class="principle-icon"></div>
-                            <span class="principle-text">5+ Years Client Loyalty</span>
+                        <div class="craft-point">
+                            <div class="craft-icon"></div>
+                            <span class="craft-text">Hot Towel Service</span>
                         </div>
                     </div>
                 </div>
                 
-                <div class="apparatus-blueprint">
-                    <img src="https://placehold.co/500x400/8B4513/D4AF37?text=Precision+Engineering+Blueprint" alt="Traditional barbering apparatus blueprint and engineering tools" class="blueprint-image">
+                <div class="about-image">
+                    <img src="https://placehold.co/500x400/D4AF37/8B4513?text=Traditional+Barbering+Tools" alt="Traditional barbering tools and craftsmanship">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Service Apparatus -->
-    <section id="apparatus" class="service-apparatus">
+    <!-- Services -->
+    <section id="services" class="services">
         <div class="container">
-            <div class="apparatus-header reveal">
-                <h2>The Apparatus Menu</h2>
+            <div class="services-header fade-in">
+                <h2>Services <span class="brass-accent">&</span> Pricing</h2>
                 <p>
-                    Each service is a masterwork of precision engineering. 
-                    All apparatus operations include our signature steam-powered straight razor finishing.
+                    Master craftsmanship meets fair pricing. Every service includes our signature 
+                    attention to detail and straight razor finishing on the nape.
                 </p>
             </div>
             
-            <div class="apparatus-grid">
-                <div class="service-mechanism reveal">
-                    <div class="mechanism-header">
-                        <h3 class="mechanism-name">Gentleman's Precision Engine</h3>
-                        <div class="mechanism-cost">$40</div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-header">
+                        <h3 class="service-name">Adult Haircut</h3>
+                        <div class="service-price">$40</div>
                     </div>
-                    <div class="mechanism-duration">35-Minute Operation • Ages 17+</div>
-                    <p class="mechanism-description">
-                        Our flagship apparatus utilizing advanced fade engineering and precision scissor mechanics. 
-                        Includes signature steam-powered straight razor finishing apparatus.
+                    <div class="service-duration">35 minutes • Ages 17+</div>
+                    <p class="service-description">
+                        Classic haircut with any type of fades or scissor work. 
+                        Includes straight razor shave on the nape for a clean finish.
                     </p>
                 </div>
                 
-                <div class="service-mechanism signature-apparatus reveal">
-                    <div class="signature-badge">Master's Choice</div>
-                    <div class="mechanism-header">
-                        <h3 class="mechanism-name">Complete Steam Engine Experience</h3>
-                        <div class="mechanism-cost">$65</div>
+                <div class="service-card featured-service fade-in">
+                    <div class="featured-badge">Most Popular</div>
+                    <div class="service-header">
+                        <h3 class="service-name">Haircut + Beard Trim w/Razor</h3>
+                        <div class="service-price">$65</div>
                     </div>
-                    <div class="mechanism-duration">50-Minute Full Operation</div>
-                    <p class="mechanism-description">
-                        The ultimate engineering experience: precision haircut apparatus, beard engineering mechanics, 
-                        steam-powered razor work, and our legendary hot apparatus service.
+                    <div class="service-duration">50 minutes • Complete experience</div>
+                    <p class="service-description">
+                        The full treatment: precision haircut, beard trim with clippers or shears, 
+                        straight razor work around edges, plus hot towel service.
                     </p>
                 </div>
                 
-                <div class="service-mechanism reveal">
-                    <div class="mechanism-header">
-                        <h3 class="mechanism-name">Young Engineer's Cut</h3>
-                        <div class="mechanism-cost">$35</div>
+                <div class="service-card fade-in">
+                    <div class="service-header">
+                        <h3 class="service-name">Youth Haircut</h3>
+                        <div class="service-price">$35</div>
                     </div>
-                    <div class="mechanism-duration">35-Minute Training • Ages 16 & Under</div>
-                    <p class="mechanism-description">
-                        Precision grooming education for future engineers. Same mechanical excellence, 
-                        adapted for developing young minds and growing heads.
+                    <div class="service-duration">35 minutes • Ages 16 & under</div>
+                    <p class="service-description">
+                        Professional haircut for young gentlemen. Same attention to detail 
+                        with patience and care appropriate for younger clients.
                     </p>
                 </div>
                 
-                <div class="service-mechanism reveal">
-                    <div class="mechanism-header">
-                        <h3 class="mechanism-name">Maintenance Engine Service</h3>
-                        <div class="mechanism-cost">$60</div>
+                <div class="service-card fade-in">
+                    <div class="service-header">
+                        <h3 class="service-name">Haircut + Beard Trim</h3>
+                        <div class="service-price">$60</div>
                     </div>
-                    <div class="mechanism-duration">45-Minute Standard Operation</div>
-                    <p class="mechanism-description">
-                        Complete maintenance operation using precision mechanical tools. 
-                        Perfect for regular apparatus upkeep between full service overhauls.
+                    <div class="service-duration">45 minutes • No razor</div>
+                    <p class="service-description">
+                        Complete haircut and beard trim using clippers or shears. 
+                        Perfect for regular maintenance between full services.
                     </p>
                 </div>
                 
-                <div class="service-mechanism reveal">
-                    <div class="mechanism-header">
-                        <h3 class="mechanism-name">Beard Engineering Apparatus</h3>
-                        <div class="mechanism-cost">$30</div>
+                <div class="service-card fade-in">
+                    <div class="service-header">
+                        <h3 class="service-name">Beard Trim w/Razor</h3>
+                        <div class="service-price">$30</div>
                     </div>
-                    <div class="mechanism-duration">25-Minute Steam Operation</div>
-                    <p class="mechanism-description">
-                        Precision facial hair engineering with steam apparatus perimeter work 
-                        and hot mechanical conditioning systems.
+                    <div class="service-duration">25 minutes • Hot towel included</div>
+                    <p class="service-description">
+                        Precision beard shaping with straight razor work under neck 
+                        and around beard lines. Includes relaxing hot towel treatment.
                     </p>
                 </div>
                 
-                <div class="service-mechanism reveal">
-                    <div class="mechanism-header">
-                        <h3 class="mechanism-name">Mechanical Beard Trim</h3>
-                        <div class="mechanism-cost">$25</div>
+                <div class="service-card fade-in">
+                    <div class="service-header">
+                        <h3 class="service-name">Beard Trim Only</h3>
+                        <div class="service-price">$25</div>
                     </div>
-                    <div class="mechanism-duration">20-Minute Precision Work</div>
-                    <p class="mechanism-description">
-                        Expert beard maintenance using precision mechanical apparatus. 
-                        Clean engineering lines without steam treatment.
+                    <div class="service-duration">20 minutes • Clean & precise</div>
+                    <p class="service-description">
+                        Professional beard maintenance using clippers or shears 
+                        to shape and trim facial hair to perfection.
                     </p>
                 </div>
                 
-                <div class="service-mechanism reveal">
-                    <div class="mechanism-header">
-                        <h3 class="mechanism-name">Victorian Full Shave Apparatus</h3>
-                        <div class="mechanism-cost">$70</div>
+                <div class="service-card fade-in">
+                    <div class="service-header">
+                        <h3 class="service-name">Full Straight Razor Shave</h3>
+                        <div class="service-price">$70</div>
                     </div>
-                    <div class="mechanism-duration">60-Minute Steam Ritual</div>
-                    <p class="mechanism-description">
-                        Ancient engineering perfected with modern steam technology. Pre-treatment apparatus, 
-                        hot steam preparation, and full straight razor ceremony.
+                    <div class="service-duration">60 minutes • Traditional experience</div>
+                    <p class="service-description">
+                        Complete traditional shave with pre-shave oils, hot towels, 
+                        and expert straight razor technique for the ultimate experience.
                     </p>
                 </div>
                 
-                <div class="service-mechanism reveal">
-                    <div class="mechanism-header">
-                        <h3 class="mechanism-name">Nasal Steam Cleaning</h3>
-                        <div class="mechanism-cost">$9</div>
+                <div class="service-card fade-in">
+                    <div class="service-header">
+                        <h3 class="service-name">Nose Wax</h3>
+                        <div class="service-price">$9</div>
                     </div>
-                    <div class="mechanism-duration">5-Minute Quick Operation</div>
-                    <p class="mechanism-description">
-                        Precision nasal hair removal using specialized mechanical extraction apparatus. 
-                        Quick, efficient engineering maintenance.
+                    <div class="service-duration">5 minutes • Quick service</div>
+                    <p class="service-description">
+                        Professional nose hair removal. Quick, efficient, and part 
+                        of complete grooming maintenance.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Client Testimonials -->
-    <section id="testimonials" class="testimonials">
+    <!-- Reviews -->
+    <section id="reviews" class="reviews">
         <div class="container">
-            <div class="testimonials-header reveal">
-                <h2>Engineer Testimonials</h2>
-                <p style="color: rgba(245, 243, 231, 0.8); font-size: 18px;">
-                    Fellow engineers and craftsmen testify to the apparatus excellence. 
-                    23 perfect calibrations and counting.
-                </p>
+            <div class="reviews-header fade-in">
+                <h2>What Clients Say</h2>
+                <p>Real reviews from real people. 23 five-star reviews and counting.</p>
             </div>
             
-            <div class="testimonials-grid">
-                <div class="client-testimony reveal">
-                    <div class="testimony-stars">★★★★★</div>
-                    <p class="testimony-text">
-                        "Absolutely the best engineering experience I've had. One on one, calm, peaceful 
-                        and top notch mechanical quality! I won't let anyone else operate on my beard apparatus."
+            <div class="reviews-grid">
+                <div class="review-card fade-in">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">
+                        "Absolutely the best barber experience I've had. One on one, calm, peaceful 
+                        and top notch quality! I won't let anyone else trim my beard."
                     </p>
-                    <div class="testimony-client">— Colt Willis, Master Engineer</div>
+                    <div class="review-author">— Colt Willis</div>
                 </div>
                 
-                <div class="client-testimony reveal">
-                    <div class="testimony-stars">★★★★★</div>
-                    <p class="testimony-text">
-                        "I've been visiting his workshop for over 5 years and every session is a perfect calibration 
-                        with detailed steam apparatus finishing."
+                <div class="review-card fade-in">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">
+                        "I've been going to him for over 5 years and every visit is a perfect fade 
+                        with a detailed straight razor finish."
                     </p>
-                    <div class="testimony-client">— Shea, Senior Engineer (5+ years)</div>
+                    <div class="review-author">— Shea (5+ year client)</div>
                 </div>
                 
-                <div class="client-testimony reveal">
-                    <div class="testimony-stars">★★★★★</div>
-                    <p class="testimony-text">
-                        "Very meticulous with his engineering craft and a great atmosphere in his workshop. 
-                        Can tell he takes pride in his mechanical work."
+                <div class="review-card fade-in">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">
+                        "Very meticulous with his craft and a great vibe in his shop. 
+                        Can tell he takes pride in his work."
                     </p>
-                    <div class="testimony-client">— Tyrell Muller, Precision Engineer</div>
+                    <div class="review-author">— Tyrell Muller</div>
                 </div>
                 
-                <div class="client-testimony reveal">
-                    <div class="testimony-stars">★★★★★</div>
-                    <p class="testimony-text">
-                        "Best engineering workshop we have found! Husband & two young apprentices ages 3 & 6. 
-                        Simply amazing apparatus work. 10/10 steam rating."
+                <div class="review-card fade-in">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">
+                        "Best place we have found! Husband & two boys ages 3 & 6. 
+                        Simply amazing. 10/10"
                     </p>
-                    <div class="testimony-client">— Katie Green, Chief Engineer</div>
+                    <div class="review-author">— Katie Green</div>
                 </div>
                 
-                <div class="client-testimony reveal">
-                    <div class="testimony-stars">★★★★★</div>
-                    <p class="testimony-text">
-                        "Excellent apparatus service and very professional engineering approach. Always leave 
-                        the workshop feeling perfectly calibrated!"
+                <div class="review-card fade-in">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">
+                        "Great service and very friendly. Always leave feeling and looking my best!"
                     </p>
-                    <div class="testimony-client">— TJ Griggs, Workshop Manager</div>
+                    <div class="review-author">— TJ Griggs</div>
                 </div>
                 
-                <div class="client-testimony reveal">
-                    <div class="testimony-stars">★★★★★</div>
-                    <p class="testimony-text">
-                        "You can tell he takes great pride in his engineering work. Only been to the workshop twice, 
-                        but I found my apparatus engineer."
+                <div class="review-card fade-in">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">
+                        "You can tell he takes great pride in his work. I found my barber."
                     </p>
-                    <div class="testimony-client">— Ed Mello, Master Craftsman</div>
+                    <div class="review-author">— Ed Mello</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Workshop Contact -->
-    <section id="contact" class="workshop-contact">
+    <!-- Contact -->
+    <section id="contact" class="contact">
         <div class="container">
-            <div class="contact-content reveal">
-                <div class="contact-proclamation">
-                    <h2>Visit the Workshop</h2>
+            <div class="contact-content fade-in">
+                <div class="contact-info">
+                    <h2>Visit the Shop</h2>
                     
-                    <div class="workshop-details">
-                        <div class="detail-mechanism">
-                            <div class="detail-icon">⚙</div>
-                            <div class="detail-info">
-                                <strong>Workshop Location</strong>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <strong>Shop Location</strong>
                                 11710 Stonegate Circle<br>
                                 Omaha, NE 68164
                             </div>
                         </div>
                         
-                        <div class="detail-mechanism">
-                            <div class="detail-icon">📞</div>
-                            <div class="detail-info">
-                                <strong>Telegraph Communications</strong>
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <strong>Call Direct</strong>
                                 (402) 819-8821
                             </div>
                         </div>
                         
-                        <div class="detail-mechanism">
-                            <div class="detail-icon">📷</div>
-                            <div class="detail-info">
-                                <strong>Visual Telegraph</strong>
+                        <div class="contact-item">
+                            <div class="contact-icon">📷</div>
+                            <div>
+                                <strong>Follow Along</strong>
                                 @rckwharton
                             </div>
                         </div>
                     </div>
                     
-                    <a href="https://wharton-barber-shop.square.site/" class="btn-apparatus" target="_blank">
-                        <span>Reserve Apparatus Session</span>
-                        <div class="gear" style="width: 16px; height: 16px; border-width: 2px;"></div>
+                    <a href="https://wharton-barber-shop.square.site/" class="btn" target="_blank">
+                        <span>Book Your Appointment</span>
+                        <span class="gear-icon"></span>
                     </a>
                 </div>
                 
-                <div class="operating-schedule">
-                    <h3>Workshop Operating Hours</h3>
-                    <div class="schedule-item">
-                        <span class="schedule-day">Monday</span>
-                        <span class="schedule-hours">Steam Rest Day</span>
+                <div class="hours-display">
+                    <h3>Shop Hours</h3>
+                    <div class="hours-item">
+                        <span>Monday</span>
+                        <span>Closed</span>
                     </div>
-                    <div class="schedule-item">
-                        <span class="schedule-day">Tuesday - Friday</span>
-                        <span class="schedule-hours">12:00 - 19:00</span>
+                    <div class="hours-item">
+                        <span>Tuesday - Friday</span>
+                        <span>12:00 PM - 7:00 PM</span>
                     </div>
-                    <div class="schedule-item">
-                        <span class="schedule-day">Saturday</span>
-                        <span class="schedule-hours">10:00 - 17:00</span>
+                    <div class="hours-item">
+                        <span>Saturday</span>
+                        <span>10:00 AM - 5:00 PM</span>
                     </div>
-                    <div class="schedule-item">
-                        <span class="schedule-day">Sunday</span>
-                        <span class="schedule-hours">Steam Rest Day</span>
+                    <div class="hours-item">
+                        <span>Sunday</span>
+                        <span>Closed</span>
                     </div>
                 </div>
             </div>
@@ -1261,9 +1107,9 @@
     </section>
 
     <!-- Footer -->
-    <footer class="workshop-footer">
+    <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Wharton Steam Works. Master Engineer Richard "Ricky" Wharton. Precision Apparatus Excellence.</p>
+            <p>&copy; 2024 Wharton Barbershop. Master craftsman Richard "Ricky" Wharton. Omaha, Nebraska.</p>
         </div>
     </footer>
 
@@ -1282,10 +1128,10 @@
             });
         });
 
-        // Reveal animation on scroll
+        // Fade in animation on scroll
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
+            rootMargin: '0px 0px -50px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -1296,56 +1142,33 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.reveal').forEach(el => {
+        document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
         });
 
-        // Dynamic steam particle generation
-        function createSteamParticle() {
-            const steamContainer = document.querySelector('.steam-effects');
-            if (steamContainer && steamContainer.children.length < 8) {
-                const particle = document.createElement('div');
-                particle.className = 'steam-particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 6 + 's';
-                steamContainer.appendChild(particle);
-                
-                setTimeout(() => {
-                    if (particle.parentNode) {
-                        particle.parentNode.removeChild(particle);
-                    }
-                }, 8000);
-            }
-        }
-
-        // Generate steam particles periodically
-        setInterval(createSteamParticle, 3000);
-
-        // Header scroll effect with steampunk styling
+        // Header scroll effect
         window.addEventListener('scroll', () => {
             const header = document.querySelector('.header');
-            if (window.scrollY > 100) {
-                header.style.background = 'linear-gradient(to bottom, rgba(28, 24, 16, 0.98) 0%, rgba(26, 15, 8, 0.95) 100%)';
-                header.style.boxShadow = '0 4px 30px rgba(212, 175, 55, 0.3)';
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(254, 252, 248, 0.98)';
+                header.style.boxShadow = '0 2px 20px rgba(139, 69, 19, 0.2)';
             } else {
-                header.style.background = 'linear-gradient(to bottom, var(--iron) 0%, rgba(28, 24, 16, 0.95) 100%)';
-                header.style.boxShadow = 'var(--steam-shadow)';
+                header.style.background = 'rgba(254, 252, 248, 0.95)';
+                header.style.boxShadow = 'none';
             }
         });
 
-        // Service mechanism hover effects
-        document.querySelectorAll('.service-mechanism').forEach(mechanism => {
-            mechanism.addEventListener('mouseenter', function() {
-                if (!this.classList.contains('signature-apparatus')) {
-                    this.style.transform = 'translateY(-12px)';
-                    this.style.boxShadow = '0 0 30px rgba(212, 175, 55, 0.4)';
+        // Service card hover effects
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                if (!this.classList.contains('featured-service')) {
+                    this.style.transform = 'translateY(-6px)';
                 }
             });
             
-            mechanism.addEventListener('mouseleave', function() {
-                if (!this.classList.contains('signature-apparatus')) {
-                    this.style.transform = 'translateY(-8px)';
-                    this.style.boxShadow = 'var(--gear-shadow)';
+            card.addEventListener('mouseleave', function() {
+                if (!this.classList.contains('featured-service')) {
+                    this.style.transform = 'translateY(-4px)';
                 }
             });
         });
