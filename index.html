@@ -94,42 +94,48 @@
             overflow-x: hidden;
         }
         
-        /* Mobile background - force dark and remove conflicts */
+        /* Mobile background - dark base with steampunk atmosphere */
         @media (max-width: 768px) {
             html, body {
                 background-color: #0F0F0F !important;
-                background: #0F0F0F !important;
+                background: 
+                    radial-gradient(circle at 20% 30%, rgba(183, 65, 14, 0.2) 0%, transparent 70%),
+                    radial-gradient(circle at 80% 70%, rgba(205, 127, 50, 0.15) 0%, transparent 60%),
+                    #0F0F0F !important;
             }
             
-            /* Remove all conflicting section backgrounds */
-            .hero-workshop,
+            /* Keep section backgrounds clean */
             .hero-workshop::before,
-            .services-apparatus,
-            .services-apparatus::before,
-            .testimonials,
-            .contact-workshop {
+            .services-apparatus::before {
                 background: none !important;
-                background-color: transparent !important;
             }
             
-            /* Force dark sections */
-            .hero-workshop,
+            /* Subtle steampunk section overlays */
             .services-apparatus {
-                background-color: #0F0F0F !important;
+                background: linear-gradient(135deg, rgba(26, 26, 26, 0.8) 0%, rgba(15, 15, 15, 0.9) 100%) !important;
+                border-top: 1px solid rgba(197, 179, 88, 0.3) !important;
+                border-bottom: 1px solid rgba(197, 179, 88, 0.3) !important;
+            }
+            
+            .testimonials {
+                background-color: rgba(15, 15, 15, 0.95) !important;
+            }
+            
+            .contact-workshop {
+                background: linear-gradient(135deg, rgba(26, 26, 26, 0.9) 0%, rgba(15, 15, 15, 1) 100%) !important;
+                border-top: 1px solid rgba(197, 179, 88, 0.3) !important;
             }
         }
         
-        /* iOS Safari fallback */
+        /* iOS Safari fallback with steampunk */
         @supports (-webkit-touch-callout: none) {
             @media (max-width: 768px) {
                 html, body {
                     background-color: #0F0F0F !important;
-                    background: #0F0F0F !important;
-                }
-                
-                .hero-workshop,
-                .services-apparatus {
-                    background-color: #0F0F0F !important;
+                    background: 
+                        radial-gradient(circle at 20% 30%, rgba(183, 65, 14, 0.2) 0%, transparent 70%),
+                        radial-gradient(circle at 80% 70%, rgba(205, 127, 50, 0.15) 0%, transparent 60%),
+                        #0F0F0F !important;
                 }
             }
         }
@@ -1249,13 +1255,24 @@
                 animation-duration: 5s;
             }
             
-            /* Disable animations on mobile for performance */
+            /* Re-enable subtle steampunk elements on mobile */
             .steam-effect {
-                display: none;
+                display: none; /* Keep disabled for performance */
             }
             
             .gear-element {
-                animation: none;
+                animation: clockwork 30s linear infinite; /* Slower, subtler */
+            }
+            
+            /* Add subtle steampunk accents */
+            .info-card {
+                background: rgba(197, 179, 88, 0.12) !important;
+                border: 2px solid rgba(197, 179, 88, 0.4) !important;
+                box-shadow: 0 4px 15px rgba(183, 65, 14, 0.2);
+            }
+            
+            .cta-main {
+                box-shadow: 0 6px 20px rgba(218, 165, 32, 0.3) !important;
             }
             
             /* Background pattern optimizations for mobile */
