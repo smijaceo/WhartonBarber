@@ -1059,18 +1059,16 @@
             });
         });
 
-        // ====== HERO ENTRANCE — orchestrated spring sequence ======
-        // Set initial states (hidden)
+        // ====== HERO ENTRANCE — gentle spring sequence ======
         const heroElements = ['.hero-title', '.hero-subtitle', '.hero-stats', '.mobile-stats', '.hero-cta', '.hero-image'];
         heroElements.forEach(sel => {
             const el = document.querySelector(sel);
             if (el) {
                 el.style.opacity = '0';
-                el.style.transform = 'translateY(40px)';
+                el.style.transform = 'translateY(20px)';
             }
         });
 
-        // Staggered spring reveal on load
         window.addEventListener('DOMContentLoaded', () => {
             const sequence = ['.hero-title', '.hero-subtitle', '.hero-stats', '.mobile-stats', '.hero-cta', '.hero-image'];
             
@@ -1078,148 +1076,127 @@
                 const el = document.querySelector(sel);
                 if (el && (el.offsetParent !== null || getComputedStyle(el).display !== 'none')) {
                     animate(el, 
-                        { opacity: [0, 1], y: [40, 0] },
+                        { opacity: [0, 1], y: [20, 0] },
                         { 
                             type: 'spring',
-                            stiffness: 100,
-                            damping: 15,
-                            delay: 0.15 + (i * 0.12)
+                            stiffness: 80,
+                            damping: 20,
+                            delay: 0.2 + (i * 0.1)
                         }
                     );
                 }
             });
         });
 
-        // ====== HERO STATS — individual spring pop-in ======
-        inView('.hero-stat', (info) => {
-            animate(info.target,
-                { opacity: [0, 1], scale: [0.8, 1], y: [20, 0] },
-                { type: 'spring', stiffness: 200, damping: 20, delay: 0.05 }
-            );
-        }, { amount: 0.3 });
-
         // ====== GEAR — scroll-linked rotation ======
         const gear = document.querySelector('.gear');
         if (gear) {
-            // Remove CSS animation, use scroll-linked rotation instead
             gear.style.animation = 'none';
-            
             scroll(
-                animate(gear, { rotate: [0, 720] }, { ease: 'linear' })
+                animate(gear, { rotate: [0, 360] }, { ease: 'linear' })
             );
         }
 
-        // ====== SERVICE CARDS — staggered spring cascade ======
+        // ====== SERVICE CARDS — subtle stagger ======
         inView('#services', () => {
             animate('.service-card',
-                { opacity: [0, 1], y: [60, 0], scale: [0.95, 1] },
+                { opacity: [0, 1], y: [24, 0] },
                 { 
                     type: 'spring',
-                    stiffness: 80,
-                    damping: 18,
-                    delay: stagger(0.1)
+                    stiffness: 100,
+                    damping: 22,
+                    delay: stagger(0.07)
                 }
             );
         }, { amount: 0.1 });
 
-        // ====== SECTION TITLES — spring slide with gold flash ======
+        // ====== SECTION TITLES — clean fade up ======
         document.querySelectorAll('.section-title').forEach(title => {
             title.style.opacity = '0';
             
             inView(title, () => {
                 animate(title,
-                    { opacity: [0, 1], y: [30, 0], filter: ['blur(8px)', 'blur(0px)'] },
-                    { type: 'spring', stiffness: 120, damping: 20 }
+                    { opacity: [0, 1], y: [16, 0] },
+                    { type: 'spring', stiffness: 100, damping: 22 }
                 );
             }, { amount: 0.5 });
         });
 
-        // ====== TESTIMONIALS — staggered spring reveal ======
+        // ====== TESTIMONIALS — gentle stagger ======
         inView('#testimonials', () => {
             animate('.testimonial',
-                { opacity: [0, 1], y: [50, 0], x: [-20, 0] },
+                { opacity: [0, 1], y: [24, 0] },
                 { 
                     type: 'spring',
-                    stiffness: 90,
-                    damping: 16,
-                    delay: stagger(0.08)
+                    stiffness: 100,
+                    damping: 22,
+                    delay: stagger(0.06)
                 }
             );
         }, { amount: 0.1 });
 
-        // ====== CONTACT — slide in from sides ======
+        // ====== CONTACT — subtle slide-in ======
         inView('#contact', () => {
             const contactLeft = document.querySelector('.contact-grid > div:first-child');
             const contactRight = document.querySelector('.hours-card');
             
             if (contactLeft) {
                 animate(contactLeft,
-                    { opacity: [0, 1], x: [-60, 0] },
-                    { type: 'spring', stiffness: 80, damping: 18, delay: 0.1 }
+                    { opacity: [0, 1], y: [20, 0] },
+                    { type: 'spring', stiffness: 100, damping: 22, delay: 0.1 }
                 );
             }
             if (contactRight) {
                 animate(contactRight,
-                    { opacity: [0, 1], x: [60, 0] },
-                    { type: 'spring', stiffness: 80, damping: 18, delay: 0.25 }
+                    { opacity: [0, 1], y: [20, 0] },
+                    { type: 'spring', stiffness: 100, damping: 22, delay: 0.2 }
                 );
             }
         }, { amount: 0.2 });
 
-        // ====== CONTACT ITEMS — spring stagger ======
+        // ====== CONTACT ITEMS — gentle stagger ======
         inView('#contact', () => {
             animate('.contact-item',
-                { opacity: [0, 1], x: [-30, 0] },
+                { opacity: [0, 1], y: [12, 0] },
                 { 
                     type: 'spring',
                     stiffness: 100,
-                    damping: 18,
-                    delay: stagger(0.08, { start: 0.3 })
+                    damping: 22,
+                    delay: stagger(0.05, { start: 0.25 })
                 }
             );
         }, { amount: 0.15 });
 
-        // ====== HOURS ITEMS — staggered fade ======
+        // ====== HOURS ITEMS — gentle stagger ======
         inView('.hours-card', () => {
             animate('.hours-item',
-                { opacity: [0, 1], x: [20, 0] },
+                { opacity: [0, 1] },
                 { 
-                    type: 'spring',
-                    stiffness: 120,
-                    damping: 20,
-                    delay: stagger(0.06, { start: 0.4 })
+                    duration: 0.4,
+                    delay: stagger(0.04, { start: 0.3 })
                 }
             );
         }, { amount: 0.3 });
 
-        // ====== SPRING HOVER on cards (service + testimonial) ======
+        // ====== SPRING HOVER — cards ======
         document.querySelectorAll('.card').forEach(card => {
             card.addEventListener('mouseenter', () => {
-                animate(card, { scale: 1.03 }, { type: 'spring', stiffness: 300, damping: 20 });
+                animate(card, { scale: 1.02 }, { type: 'spring', stiffness: 300, damping: 25 });
             });
             card.addEventListener('mouseleave', () => {
-                animate(card, { scale: 1 }, { type: 'spring', stiffness: 300, damping: 20 });
+                animate(card, { scale: 1 }, { type: 'spring', stiffness: 300, damping: 25 });
             });
         });
 
         // ====== BUTTON HOVER — spring press ======
         document.querySelectorAll('.btn').forEach(btn => {
             btn.addEventListener('mouseenter', () => {
-                animate(btn, { scale: 1.05, y: -3 }, { type: 'spring', stiffness: 400, damping: 15 });
+                animate(btn, { scale: 1.03, y: -2 }, { type: 'spring', stiffness: 400, damping: 20 });
             });
             btn.addEventListener('mouseleave', () => {
-                animate(btn, { scale: 1, y: 0 }, { type: 'spring', stiffness: 400, damping: 15 });
+                animate(btn, { scale: 1, y: 0 }, { type: 'spring', stiffness: 400, damping: 20 });
             });
         });
-
-        // ====== PARALLAX — hero background pattern ======
-        const heroBg = document.querySelector('.hero::before');
-        if (document.querySelector('.hero')) {
-            scroll(
-                animate('.hero', { backgroundPositionY: ['0%', '30%'] }, { ease: 'linear' }),
-                { target: document.querySelector('.hero') }
-            );
-        }
     </script>
 </body>
 </html>
